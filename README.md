@@ -36,6 +36,17 @@ Java es un conjunto de componentes y caracteristicas que nos brindan las herrami
 **objetivos: El lenguaje de programcion java fue diseñado para ser: orientado a objetos; distribuido; simple; multihilo(dividir el proceso en subprocesos para descomponer y mejorar la performance, se usa para correr varios procesos al mismo tiempo); seguro; e independiente de la plataforma.
 **Orientado a objetos: para escribir cualquier progrma en java es necesario definir los objetos que en el dben intervenir. Esta caracteristica nos da la posibilidad de representar de manera clara la realidad y los problemas que debemos resolver.
 **Caracteristicas: cuenta con la java virtual machine, la java runtime environment, el garbage collector, y el java development kit. La jvm es un programa especial que interpreta el archivo intermedio bytecode. la jre esta conformada por las bibliotecas de clase y la jvm, las bibliotecas de clases java (tambien llamadas api) son bibliotecas de codigo previamente escrito que pueden ser combinadas con el codigo que nosotros escribamos para aplicaciones robustas. El garbage collector se encarga de la simpleza, ya que recorre constantemente la tabla de referemcias a objetos y cuando un objeto no es referenciado desde ningun otro objeto o funcion este es eliminado y en consecuencia liberada la porcion de memoria en la que estaba almacenado. el jdk contiene todo lo necesario para construir aplicaciones java. 
+** Una clase :
+public class Prueba {
+  prueba es el nombre de la clase. java tiene un metodo particular llamado main que es la ejecucion del progrma principal.
+
+  public static void main (String[] args) {
+todo lo que escriba aca va a pertenecer a este metodo. dentro de los metodos se escriben sentencias.
+System.out.println("Hola Mundo"); es para imprimir por pantalla.
+  }
+}
+
+comandos: dir muestra el contendiso de un directorio; cd cambia directorio; cd .. vuelvo al directorio anterior; cd \ va al raiz; letra selecciona el disco rigido;
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 *Clase 4:
 
