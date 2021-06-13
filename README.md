@@ -32,3 +32,23 @@
    **Almacenamiento: siempre necesitamos contar con datos: datos de referencia permanentes, movimientos y transacciones, resultados de un proceso y resultados intermedios pasando de un programa a otro. Como la memoria de la maquina es volatil necesitamos mecanismos de almacenamiento como archivos planos, bases de datos(jerarquica o relacional.)
  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  *Clase 3:
+Java es un conjunto de componentes y caracteristicas que nos brindan las herramientas necesarias para construir software moderno en diferentes ambientes. La tecnologia Jva contiene: un entorno de programacion(es un entorno de programacion porque nos ofrece una sintaxis a traves de la cual se puede escribir cualquier tipo de aplicacion), un entorno de desarrollo(nos provee de una amplia gama de herramientas para el desarrollo de aplicaciones como ser un compilador, javac, un interprete, jvm, un generador de documentacion, javadoc, una herramienta de paquetes de archivos, jar), un entorno de aplicacion, como entorno de despliegue java nos ofrece una herramienta(jre), el cual se encarga de brindar todo lo necesario para que las aplicaciones escritas con java funcionen de manera correcta.
+**objetivos: El lenguaje de programcion java fue diseñado para ser: orientado a objetos; distribuido; simple; multihilo(dividir el proceso en subprocesos para descomponer y mejorar la performance, se usa para correr varios procesos al mismo tiempo); seguro; e independiente de la plataforma.
+**Orientado a objetos: para escribir cualquier progrma en java es necesario definir los objetos que en el dben intervenir. Esta caracteristica nos da la posibilidad de representar de manera clara la realidad y los problemas que debemos resolver.
+**Caracteristicas: cuenta con la java virtual machine, la java runtime environment, el garbage collector, y el java development kit. La jvm es un programa especial que interpreta el archivo intermedio bytecode. la jre esta conformada por las bibliotecas de clase y la jvm, las bibliotecas de clases java (tambien llamadas api) son bibliotecas de codigo previamente escrito que pueden ser combinadas con el codigo que nosotros escribamos para aplicaciones robustas. El garbage collector se encarga de la simpleza, ya que recorre constantemente la tabla de referemcias a objetos y cuando un objeto no es referenciado desde ningun otro objeto o funcion este es eliminado y en consecuencia liberada la porcion de memoria en la que estaba almacenado. el jdk contiene todo lo necesario para construir aplicaciones java. 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*Clase 4:
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*Clase 5:
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*Clase 6:
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*Clase 7:
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*Clase 8:
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
