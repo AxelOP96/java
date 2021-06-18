@@ -61,6 +61,13 @@ un String es una cadena de caracteres que va entre "";
 si intento sumar tipos distintos se convierte en el mas grande. Si sumara enteros y char el char aumentaria ya que este representa caracteres ASCII.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 *Clase 5:
+operadores relacionales: <; >; <=; >=; ==; !=;
+operadores logicos: &&(solo se cumple si las dos condiciones son verdaderas); || (se cumple si al menos una de las opciones es verdadera); !(niega si es verdadero y lo convierte a falso y viceversa).
+Todos los operadores relacionales terminan dando un boolean ya que comparan y retornan si es true o false la relacion.  
+ tipoDato xxxx = tipoDato (el tipo de dato tiene que ser igual o menor). En los operadores lógicos se usan booleans y se 
+comparan.  Primero se resuelven los ||. Comparo cada uno como si fueran cálculos combinados CLASE. 
+x++: llamado post incremento, este operador primero realiza la operacion luego le añade uno a la variable. 
+++x:llamado pre incremento, este operador suma uno a la variable antes de realizar la operacion y luego realiza la operacion.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 *Clase 6:
