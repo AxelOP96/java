@@ -83,3 +83,5 @@ x++: llamado post incremento, este operador primero realiza la operacion luego l
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Diplomatura en Java UTN:
 Clase 1: https://www.youtube.com/watch?v=jSBB-bj1eHM
+Clase 1:(Teorica) https://www.youtube.com/watch?v=ri6dkkO1EoY
+Clase 1:(Practica) https://www.youtube.com/watch?v=_CLJRxBF_tc
