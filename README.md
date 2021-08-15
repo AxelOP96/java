@@ -82,8 +82,14 @@ x++: llamado post incremento, este operador primero realiza la operacion luego l
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Diplomatura en Java UTN:
+
+
 Clase 1: https://www.youtube.com/watch?v=jSBB-bj1eHM
+
+
 Clase 1:(Teorica) https://www.youtube.com/watch?v=ri6dkkO1EoY
+
+
 Introduccion a la logica:
 La logica es el estudio de los principios y metodos utilizados para distinguir el razonamiento correcto del incorrecto.
 El pensamiento logico contribuye a interpretar las especificaciones de diseño o requisitos de las asignaciones a programar, comprendiendo en su contexto inmediato cual es el problema a resolver. Determinar el alcance del problema y convalidar su presentacion a fin de identificar aspectos faltantes. Desarrollar algoritmos que dan soluciones a los problemas asignados o derivados de los mismos.
@@ -104,5 +110,8 @@ Estructura de datos:
 Estructura de control:
 Estructura de programacion:
 Algoritmos fundamentales de busqueda, recorrido y ordenamiento
+
+
 Clase 1:(Practica) https://www.youtube.com/watch?v=_CLJRxBF_tc
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
