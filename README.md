@@ -53,21 +53,27 @@ System.out.println("Hola Mundo"); es para imprimir por pantalla.
   }
 }
 
-comandos: dir muestra el contendiso de un directorio; cd cambia directorio; cd .. vuelvo al directorio anterior; cd \ va al raiz; letra selecciona el disco rigido;
+comandos: dir muestra el contenido de un directorio; cd cambia directorio; cd .. vuelvo al directorio anterior; cd \ va al raiz; letra selecciona el disco rigido;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Clase 4:
 
+Cuando inicializo una variable le asigno un espacio de memoria para esa variable, cuando compilo el compilador le asigna espacio para poder guardar esa memoria, dependiendo del tipo de dato el tamaño del almacenamiento es mayor.
 tipos de datos primitivos en Java: byte con un tamaño de 8 bits, short con un tamaño de 16 bits, int con un tamaño de 32 bits, long con un tamaño de 64 bits, char con un tamaño de 16 bits, float con un tamaño de 32 bits, double con un tamaño de 64 bits y boolean que solo puede ser true o false. el byte va desde -128 a 127; el short ;
 Los tipos no primitivos correponden a objetos creados a partir de una clase y por ser objetos asume como valor por defecto null. Es importante destacar la diferencia que existe entre realizar una operacion de asignacion entre variables del tipo objeto y variables de tipo primitivo. En el caso del tipo primitivo esta operacion implica que el dato contenido en una variable se copia en otra. En el caso en que se trate de un tipo objeto debemos recordar que lo que se esta copiando es una referencia al objeto, no el objeto. de esta manera no tenemos dos copias del objeto sino un unico objeto referenciado por dos variables. Java es un lenguaje fuertemente tipado o sea estricto a la hora de asignar valores a las variables. El compilador solo admite asignar a una variable un dato del tipo declarado en una variable, aunque permite realizar conversiones para almacenar en una variable un dato de tipo diferente al declarado. Las conversiones se pueden realizar de dos maneras: de forma implicita o explicita.
+
 Conversiones implicitas: se realizan en forma automaticas a traves del compilador, antes de almacenarlo en una variable. ejemplo:
 int i;
 byte b = 30;
 i = b;
 Conversiones explicitas: para convertir explicitamente le debo pedir que cambie al tipo que quiero: Ejemplo:
-promedio = (float)suma/3; variable_destino=(tipo_destino)data_origen; con esta expresion se le indica al compilador que convierta dato_origen a tipo_destino para que pueda ser almacenado en la variable destino. A esta operacion se la denomina casting o estrechamineto ya que al convertir un dato de un tipo en otro de tipo inferior se realiza una reduccion, un estrechamineto que en algunos casos puede llevar a una perdida de datos o precision, pero que evitaria posibles errores de ejecucion.
+promedio = (float)suma/3; variable_destino=(tipo_destino)data_origen; 
+con esta expresion se le indica al compilador que convierta dato_origen a tipo_destino para que pueda ser almacenado en la variable destino. A esta operacion se la denomina
+casting o estrechamineto ya que al convertir un dato de un tipo en otro de tipo inferior se realiza una reduccion, un estrechamineto que en algunos casos puede llevar a una
+perdida de datos o precision, pero que evitaria posibles errores de ejecucion.
 un String es una cadena de caracteres que va entre "";
 si intento sumar tipos distintos se convierte en el mas grande. Si sumara enteros y char el char aumentaria ya que este representa caracteres ASCII.
+Una constante es una valor que se mantiene, no cambia con el tiempo. Final es un metodo que permite que el valor quede constante, que no se pueda cambiar.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Clase 5:
