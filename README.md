@@ -1,5 +1,5 @@
 # java
-#Practicas de Java de la universidad con sus explicaciones y actividades
+#Practicas de Java con sus explicaciones y actividades
 
 Clase 1:
   Que es la programacion? Hacer que la maquina haga lo que querramos. Ayudan a resolver problemas y facilitar otras. Se espera un resultado consistente, repetible y confiable.
@@ -18,7 +18,8 @@ Clase 1:
  Ciclo de vida del software: diseñar, escribir el codigo fuente y generar el objetivo ejecutable, ejecutar la solucion y verificar el resultado y el debug(busqueda de errores).
  
  
- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ ---------
  
  Clase 2:
 Eclipse es un editor de texto para poder escribir codigo fuente en la maquina. Es un IDE(interface developer environment).
