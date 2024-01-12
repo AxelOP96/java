@@ -381,6 +381,58 @@ Reglas de visibilidad
    Si la superclase define un miembro como protegido, la subclase podrá accederlo como si fuera propio pero privado. Las clases ajenas a la jerarquía no podrán accederlo.
    Si la superclase define un miembro como público, la subclase lo poseerá con la misma visibilidad. Las clases ajenas a la jerarquía podrán acceder al mismo.
 
+  1. Una variable declarada en un método existe (es visible) desde el inicio de su declaración hasta el final del método.
+
+  2. Una variable declarada en un bloque de código existe hasta el final del bloque de código.
+
+  3. Los parámetros de un método existen en todas partes dentro del método.
+
+  4. Las variables en un objeto existen durante toda la vida útil del objeto que las contiene. Su visibilidad también está definida por modificadores de acceso especiales:
+  
+  5.  público y privado .
+
+  6. Las variables estáticas (de clase) existen todo el tiempo que se ejecuta el programa. Su visibilidad también está definida por modificadores de acceso.
+     
+  Si una variable se declara estática, es decir, se marca con la palabra clave static , existe mientras exista su clase. La JVM generalmente carga una clase en la memoria
+  en su primer uso. También es cuando se inicializan las variables estáticas
+  Cuando llamas a un método usando <object> dot <method name> , en realidad estás llamando a un método de clase y pasando ese mismo objeto como primer argumento. Dentro 
+  del método, el objeto se llama 'this' . Todas las operaciones en el se realizan en este objeto y sus datos
+  
+  \" – Escape sequence for double quote character.
+  \\ – Escape sequence for a backslash (\) character.
+  para obtener esto:
+  This is a Windows path: "C:\Program Files\Java\jdk1.8.0_172\bin"
+  This is a Java string: \"C:\\Program Files\\Java\\jdk1.8.0_172\\bin\"
+  debemos escribir esto:
+  System.out.println("This is a Windows path: \"C:\\Program Files\\Java\\jdk1.8.0_172\\bin\"");
+  System.out.println("This is a Java string: \\\"C:\\\\Program Files\\\\Java\\\\jdk1.8.0_172\\\\bin\\\"");
+  
+  Otra forma de leer datos:
+  InputStream inputStream = System.in;
+  Reader inputStreamReader = new InputStreamReader(inputStream);
+  BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+  
+  String name = bufferedReader.readLine(); //Read a string from the keyboard
+  String sAge = bufferedReader.readLine(); //Read a string from the keyboard
+  int nAge = Integer.parseInt(sAge); //Convert the string to a number.
+  
+  Una versión más compacta del ejemplo anterior:
+  BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+  
+  String name = reader.readLine();
+  String sAge = reader.readLine();
+  int nAge = Integer.parseInt(sAge);
+  
+  Aún más compacto
+  Scanner scanner = new Scanner(System.in);
+  String name = scanner.nextLine();
+  int age = scanner.nextInt();
+
+  Cuando llamas a un método usando <object> dot <method name> , en realidad estás llamando a un método de clase y pasando ese mismo objeto como primer argumento. Dentro 
+  del método, el objeto se llama 'this' . Todas las operaciones en el se realizan en este objeto y sus datos
+
+  
+
 ---------------------------------------------------------------------------------------------------------------------------------------
 
 
