@@ -351,6 +351,320 @@ para contener el engranaje actual, la cadencia actual y así sucesivamente, por 
 bicicleta. La clase podría además declarar y proveer implementaciones para los métodos de
 instancia que permitan al ciclista cambiar de engranaje, frenar y cambiar la cadencia de pedaleo
 
+Ejercicios:
+1-
+public class Solution {
+    public static void main(String[] args) {
+
+        Person person = new Person();
+        System.out.println("Age: " + person.age);
+        person.adjustAge(person.age);
+        System.out.println("Adjusted age: " + person.age);
+    }
+
+    public static class Person {
+        public int age = 20;
+
+        public void adjustAge(int age) {
+            this.age = age + 20;
+            System.out.println("The age in adjustAge() is " + this.age);
+        }
+    }
+}
+2-
+public class Solution {
+    public static void main(String[] args) {
+        Apple apple = new Apple();
+        apple.addPrice(50);
+        Apple apple2 = new Apple();
+        apple2.addPrice(100);
+        System.out.println("The cost of apples is " + Apple.applePrice);
+    }
+
+    public static class Apple {
+        public static int applePrice = 0;
+
+        public static void addPrice(int applePrice) {
+            Apple.applePrice += applePrice;
+        }
+    }
+}
+public class Cat {
+    private String name = "nameless cat";
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public static void main(String[] args) {
+        Cat cat = new Cat();
+        cat.setName("Simba");
+        System.out.println(cat.name);
+    }
+}
+public class Cat {
+    private static int catCount = 0;
+
+    public static void addNewCat() {
+        Cat.catCount++;
+    }
+
+    public static void main(String[] args) {
+        Cat cat = new Cat();
+        addNewCat();
+        Cat cat2 = new Cat();
+        addNewCat();
+        System.out.println(Cat.catCount);
+    }
+}
+public class Cat {
+    private static int catCount = 0;
+
+    public static void setCatCount(int catCount) {
+        Cat.catCount = catCount;
+    }
+
+    public static void main(String[] args) {
+
+    }
+}
+public class Cat {
+    private String fullName;
+
+    public void setName(String firstName, String lastName) {
+        String fullName = firstName + " " + lastName;
+
+        this.fullName = fullName;
+    }
+
+    public static void main(String[] args) {
+
+    }
+}
+public class Solution {
+    public static void main(String[] args) {
+        compare(3);
+        compare(6);
+        compare(5);
+    }
+
+    public static void compare(int a) {
+        if(a < 5){
+            System.out.println("The number is less than 5");
+        }else{
+            if(a > 5){
+                System.out.println("The number is greater than 5");
+            }else{
+                System.out.println("The number is equal to 5");
+            }
+        }
+        
+    }
+}
+public class Solution {
+    public static void main(String[] args) {
+        displayClosestToTen(8, 11);
+        displayClosestToTen(7, 14);
+    }
+
+    public static void displayClosestToTen(int a, int b) {
+        if((abs(10 - a))< (abs(10 - b)) ){
+            System.out.println(a);
+        }else if((abs(10 - a))> (abs(10 - b)) ){
+            System.out.println(b);
+        }
+        else{
+            System.out.println(b);
+        }
+    }
+
+    public static int abs(int a) {
+        if (a < 0) {
+            return -a;
+        } else {
+            return a;
+        }
+    }
+}
+public class Solution {
+    public static void main(String[] args) {
+        checkInterval(60);
+        checkInterval(112);
+        checkInterval(10);
+    }
+
+    public static void checkInterval(int a) {
+        if(a >= 50 && a <= 100){
+            System.out.println("The number " + a + " is in the interval.");
+        }else{
+            System.out.println("The number " + a + " is not in the interval.");
+        }
+    }
+}
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int year = Integer.parseInt(reader.readLine());
+        if(year % 400==0){
+            System.out.println("Number of days in the year: 366");
+        }
+        else if(year % 100==0 && year % 400!=0){
+            System.out.println("Number of days in the year: 365");
+        }
+        else if(year % 4==0){
+            System.out.println("Number of days in the year: 366");
+        }
+        else{
+            System.out.println("Number of days in the year: 365");
+        }
+    }
+}
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
+        double number =Double.parseDouble(reader.readLine());
+        int phase = (int) (number % 5);
+        if (phase >= 0 && phase < 3) {
+            System.out.println("green");
+        } else if (phase == 3) {
+            System.out.println("yellow");
+        } else {
+            System.out.println("red");
+        }
+    }
+}
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int one = Integer.parseInt(reader.readLine());
+        int two = Integer.parseInt(reader.readLine());
+        
+        int min = 0;
+        if(one < two){
+            min = one;
+        }
+        else if(two < one){
+            min = two;
+        }else{
+            min = one;
+        }
+        System.out.println(min);
+    }
+}
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int a = Integer.parseInt(reader.readLine());
+        int b = Integer.parseInt(reader.readLine());
+        int c = Integer.parseInt(reader.readLine());
+        int first;
+        int second;
+        int third;
+        if(a >= b && a >= c){
+            first = a;
+            if(b >= c){
+                second = b;
+                third = c;
+            }else{
+                second = c;
+                third = b;
+            }
+        }
+        else if(b >= a && b >= c){
+            first = b;
+            if(a >= c){
+                second = a;
+                third = c;
+            }else{
+                second = c;
+                third = a;
+            }
+        }else{
+            first = c;
+            if(a >= b){
+                second = a;
+                third = b;
+            }else{
+                second = b;
+                third = a;
+            }
+        }
+        System.out.println(first + " " + second + " " + third);
+        
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        int num1 = 1;
+
+    while (num1 <= 10) {
+        int mult = 1;
+
+        while (mult <= 10) {
+            System.out.print(num1 * mult + " ");
+            mult++;
+        }
+
+        System.out.println(); // Agrega una nueva línea después de cada fila
+        num1++;
+    }
+
+    }
+}
+
+13-
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        for(int i =0; i< 10;i++){
+            System.out.print("8");
+        }
+        System.out.println("");
+        for(int i =0; i< 10;i++){
+            System.out.println("8");
+        }
+    }
+}
+16-
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int num1 = Integer.parseInt(reader.readLine());
+        int num2 = Integer.parseInt(reader.readLine());
+        int num3 = Integer.parseInt(reader.readLine());
+        int middle = 0;
+        if(num1 >= num2 && num1 >= num3 && num2 <= num3){
+            middle = num3;
+        }
+        else if(num1 >= num2 && num1 >= num3 && num3 <= num2){
+            middle = num2;
+        }
+        else if(num2 >= num1 && num2 >= num3 && num1 <= num3){
+            middle = num3;
+        }
+        else if(num2 >= num1 && num2 >= num3 && num3 <= num1){
+            middle = num1;
+        }
+        else if(num3 >= num1 && num3 >= num2 && num1 <= num2){
+            middle = num2;
+        }
+        else if(num3 >= num1 && num3 >= num2 && num2 <= num1){
+            middle = num1;
+        }
+        System.out.println(middle);
+    }
+}
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name = reader.readLine();
+        int year = Integer.parseInt(reader.readLine());
+        int month = Integer.parseInt(reader.readLine());
+        int day =Integer.parseInt(reader.readLine());
+        System.out.println("My name is " + name + ".");
+        System.out.println("I was born on " + month + "/" + day + "/" + year);
+    }
+}
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------
