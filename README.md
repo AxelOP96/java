@@ -666,6 +666,330 @@ public class Solution {
     }
 }
 
+    Mas ejercicios:
+  
+    public class Solution {
+      public static void main(String[] args) throws Exception {
+          BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+          double sum=0.0;
+          int count=0;
+          int number=0;
+          while(number!=-1){
+              number = Integer.parseInt(reader.readLine());
+              if(number==-1){
+                  break;
+              }else{
+                  sum+=number;
+                  count++;
+              }
+          }
+          System.out.println(sum/count);
+      }
+  }
+
+  public class Rectangle {
+    int left;
+    int top;
+    int width;
+    int height;
+    public void initialize(int left, int top, int width, int height){
+        this.left=left;
+        this.top=top;
+        this.width=width;
+        this.height=height;
+    }
+    public void initialize(Rectangle rectangle){
+        this.left=rectangle.left;
+        this.top=rectangle.top;
+        this.width=rectangle.width;
+        this.height=rectangle.height;
+    }
+    public void initialize(int left, int top, int width){
+        this.left=left;
+        this.top=top;
+        this.width=width;
+        this.height=0;
+    }
+    public void initialize(int left, int top){
+        this.left=left;
+        this.top=top;
+        this.width=0;
+        this.height=0;
+    }
+    public static void main(String[] args) {
+
+    }
+}
+
+    public class Solution {
+      public static class Man{
+          String name;
+          int age;
+          String address;
+          public Man(String name, int age, String address){
+              this.name=name;
+              this.age=age;
+              this.address=address;
+          }
+          public String toString(){
+              return name + " " + age + " " + address;
+          }
+      }
+      public static class Woman{
+          String name;
+          int age;
+          String address;
+          public Woman(String name, int age, String address){
+              this.name=name;
+              this.age=age;
+              this.address=address;
+          }
+          public String toString(){
+              return name + " " + age + " " + address;
+          }
+      }
+  
+      public static void main(String[] args) {
+          Man man1 = new Man("Juan", 18, "NY");
+          Man man2 = new Man("John", 25, "Tx");
+          System.out.println(man1);
+          System.out.println(man2);
+          Woman woman1 = new Woman("Jean", 30, "Arg");
+          System.out.println(woman1);
+          Woman woman2 = new Woman("Jane", 65, "Ushuaia");
+          System.out.println(woman2);
+      }
+  }
+
+    public class Solution {
+      public static class Date{
+          int month;
+          int day;
+          int year;
+          public Date(int month,int day, int year){
+              this.day=day;
+              this.month=month;
+              this.year=year;
+          }
+          public String toString(){
+              return day + " " + month + " " + year;
+          }
+      }
+      public static void main(String[] args) {
+          Date date = new Date(15, 01, 2024);
+          System.out.println(date.toString());
+          
+      }
+  }
+    public class Circle {
+      public Color color;
+  
+      public static void main(String[] args) {
+          Circle circle = new Circle();
+          circle.color.setDescription("Red");
+          System.out.println(circle.color.getDescription());
+      }
+      public Circle() {
+          color = new Color();
+      }
+      public class Color {
+          String description;
+  
+          public String getDescription() {
+              return description;
+          }
+  
+          public void setDescription(String description) {
+              this.description = description;
+          }
+      }
+  }
+  Llamar a un constructor desde otro: con this();
+    public class Circle {
+  
+      public double x;
+      public double y;
+      public double radius;
+  
+      public Circle(double x, double y, double radius) {
+          this.x = x;
+          this.y = y;
+          this.radius = radius;
+      }
+  
+      public Circle(double x, double y) {
+          this(x, y, 10);
+      }
+  
+      public Circle() {
+          this(5, 5, 1);
+      }
+  
+      public static void main(String[] args) {
+          Circle circle = new Circle();
+          System.out.println(circle.x + " " + circle.y + " " + circle.radius);
+          Circle anotherCircle = new Circle(10, 5);
+          System.out.println(anotherCircle.x + " " + anotherCircle.y + " " + anotherCircle.radius);
+      }
+  }
+  
+    public class Solution {
+      public static void main(String[] args) throws Exception {
+          BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+          int a = Integer.parseInt(reader.readLine());
+          int b = Integer.parseInt(reader.readLine());
+          int c = Integer.parseInt(reader.readLine());
+          int d = Integer.parseInt(reader.readLine());
+          int e = Integer.parseInt(reader.readLine());
+          int minimum = min(a, b, c, d, e);
+          System.out.println("Minimum = " + minimum);
+      }
+      public static int min(int a, int b, int c, int d, int e) {
+          int min = a;
+          if(min > b){
+              min = b;
+          }
+          if(min > c){
+              min = c;
+          }
+          if(min > d){
+              min = d;
+          }
+          if(min > e){
+              min = e;
+          }
+          return min;
+      }
+  }
+    public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int maximum;
+        int count = Integer.parseInt(reader.readLine());
+        if(count > 0){
+            maximum = Integer.parseInt(reader.readLine());
+            for(int i =1; count > i; i++){
+                int currentNumber = Integer.parseInt(reader.readLine());
+                if(currentNumber> maximum){
+                    maximum=currentNumber;
+                }
+            }
+            System.out.println(maximum);
+        }
+    }
+}
+
+
+  
+
+
+  
+  
+  la clase ArrayList:
+  Cada objeto ArrayList almacena una matriz regular de elementos. Cuando lee elementos de una ArrayList , los lee desde su matriz interna. Cuando los escribe en ArrayList,
+  los escribe en su matriz interna
+  Creacion:
+  String[] list = new String[10];
+  ArrayList<String> list = new ArrayList<String>();
+  Obtener el número de elementos
+  int n = list.length;
+  int n = list.size();
+  Obtener un elemento de una matriz/colección
+  String s = list[3];
+  String s = list.get(3);
+  Escribir un elemento en una matriz
+  list[3] = s;
+  list.set(3, s);
+
+  ArrayList admite varias operaciones adicionales que los programadores tienen que realizar todo el tiempo. Una matriz común no admite estas operaciones. Por ejemplo, 
+  insertar o eliminar elementos del medio de una matriz sin dejar agujeros
+  En segundo lugar, la capacidad de cambiar el tamaño de la matriz. Cuando necesita agregar un elemento más pero la matriz interna no tiene ranuras libres, esto es lo 
+  que sucede dentro de ArrayList :
+
+    a) Se crea otra matriz que es un 50 % más grande que la matriz interna actual, más un elemento.
+    
+    b) Todos los elementos de la matriz anterior se copian en la nueva.
+    
+    c) La nueva matriz se guarda como la matriz interna del objeto ArrayList. La matriz anterior se declara basura (simplemente dejamos de almacenar una referencia a ella)
+  Agregar un elemento al final de la matriz:
+  esta accion no es soportada	
+  list.add(s);
+  Agregue un elemento en el medio de la matriz:
+  esta accion no es soportada	
+  list.add(15, s);
+  Agregar un elemento al comienzo de la matriz:
+  esta accion no es soportada	
+  list.add(0, s);
+  Eliminar un elemento de la matriz:
+  Podríamos eliminar un elemento con list[3] = null. Pero esto dejaría un 'agujero' en la matriz.	
+  list.remove(3);
+
+  En Java, una colección/contenedor significa una clase cuyo objetivo principal es almacenar una colección de otros elementos. Ya conoces una de esas clases: ArrayList.
+  En Java, las colecciones se dividen en tres grupos principales: Conjunto, Lista, Mapa.  Conjunto: Puede agregar un elemento a un Conjunto, buscarlo o eliminarlo. Lo 
+  importante a tener en cuenta es que los elementos del conjunto no tienen un orden específico asignado. una Lista: Puede agregar un elemento al principio o en medio 
+  de una lista, o eliminar un elemento, simplemente usando su índice. En un mapa (también llamado a menudo diccionario). Cada elemento tiene su propio nombre único que 
+  es utilizado para abordarlo. Este nombre único para cada elemento a menudo se denomina "clave". Por lo tanto, un mapa es un conjunto de pares clave-valor. La clave no
+  tiene que ser una cadena: puede ser de cualquier tipo. El mapa cuyas claves son Integer es de hecho una Lista (con algunas diferencias)
+  
+
+  ¿Qué son los generics?
+  Los generics son tipos que tienen un parámetro. En Java, las clases contenedoras le permiten indicar el tipo de sus objetos internos. Cuando declaramos una variable
+  genérica, indicamos dos tipos en lugar de uno: el tipo de variable y el tipo de datos que almacena.
+
+  ArrayList es un buen ejemplo. Cuando creamos un nuevo objeto ArrayList, es conveniente indicar el tipo de valores que se almacenarán dentro de esta lista
+  ArrayList<String> list = new ArrayList<String>();	//Cree una variable ArrayList llamada list. Asígnele un objeto ArrayList. Esta lista solo puede almacenar objetos String
+  ArrayList list = new ArrayList();	Cree una variable ArrayList llamada list. Asígnele un objeto ArrayList. Esta lista puede almacenar cualquier valor.
+
+  Clases Wrapper:
+  tipo primitivo	Clase	    Lista
+  int	            Integer	  ArrayList< Integer >
+  double	        Double	  ArrayList <Double> _
+  boolean	        Boolean	  ArrayList< Boolean >
+  char	          Character	ArrayList< Character >
+  byte	          Byte	    ArrayList <Byte>
+
+  Ejemplo 2:
+
+  Igual que arriba, pero los números pares se agregan al final de la lista, los impares al principio.
+    public static void main(String[] args) throws IOException
+    {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        ArrayList<Integer> list = new ArrayList<Integer>();
+    
+        while (true)
+        {
+            String s = reader.readLine();
+            if (s.isEmpty()) break;
+    
+            int x = Integer.parseInt(s);
+            if (x % 2 == 0)  // Check that the remainder is zero when we divide by two
+                list.add(x);         // Add to the end
+            else
+                list.add(0, x);      // Add to the beginning
+        }
+    }
+    
+  Divida una matriz en dos partes: números pares e impares
+    public static void main(String[] args) throws IOException
+    {
+        // Static initialization of the array
+        int[] data = {1, 5, 6, 11, 3, 15, 7, 8};
+        // Create a list where all elements are Integers
+        ArrayList&ltInteger> list = new ArrayList&ltInteger> ();
+        // Use the array to fill the list
+        for (int i = 0; i < data.length; i++) list.add(data[i]);
+        ArrayList&ltInteger> even = new ArrayList&ltInteger>();  // Even numbers
+        ArrayList&ltInteger> odd = new ArrayList&ltInteger>();    // Odd numbers
+        for (int i = 0; i < list.size(); i++)
+        {
+            Integer x = list.get(i);
+            if (x % 2 == 0)    // If x is even
+                even.add(x);   // Add x to the collection of even numbers
+            else
+                odd.add(x);    // Add x to the collection of odd numbers
+        }
+    }
+
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
