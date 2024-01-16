@@ -29,7 +29,7 @@ Clase 1:
    nuevo Bytecode y luego interpretarlo.
    
      Ciclo de vida del software: diseñar, escribir el codigo fuente y generar el objetivo ejecutable, ejecutar la solucion y verificar el resultado y el debug(busqueda de
-   errores).
+     errores).
  
  
  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -90,17 +90,13 @@ la simpleza, ya que recorre constantemente la tabla de referemcias a objetos y c
 en consecuencia liberada la porcion de memoria en la que estaba almacenado. el jdk contiene todo lo necesario para construir aplicaciones java. 
  Una clase :
     public class Prueba {
-     // 
-    
-  prueba es el nombre de la clase. java tiene un metodo particular llamado main que es la ejecucion del progrma principal.
+     // prueba es el nombre de la clase. java tiene un metodo particular llamado main que es la ejecucion del progrma principal.
+     public static void main (String[] args) {
+     todo lo que escriba aca va a pertenecer a este metodo. dentro de los metodos se escriben sentencias.
+      System.out.println("Hola Mundo"); es para imprimir por pantalla.}
+      }
 
-    public static void main (String[] args) {
-    todo lo que escriba aca va a pertenecer a este metodo. dentro de los metodos se escriben sentencias.
-      System.out.println("Hola Mundo"); es para imprimir por pantalla.
-    }
-  }
-
-  comandos: dir muestra el contenido de un directorio; cd cambia directorio; cd .. vuelvo al directorio anterior; cd \ va al raiz; letra selecciona el disco rigido;
+      comandos: dir muestra el contenido de un directorio; cd cambia directorio; cd .. vuelvo al directorio anterior; cd \ va al raiz; letra selecciona el disco rigido;
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -228,17 +224,18 @@ Las variables Java son un espacio de memoria en el que guardamos un determinado 
 
 Ejemplo 3:
 
-  public class MyClass {
-      public static void main(String args[]) {
-        int cantidadDePeras = 5;
-        int cantidadDeManzanas = 10;
-        boolean hoyLlueve = false;
-        boolean hoyEstaSoleado = true;
-        System.Out.Println(cantidadDePeras + cantidadDeManzanas);
-      }
-  }
+    public class MyClass {
+        public static void main(String args[]) {
+          int cantidadDePeras = 5;
+          int cantidadDeManzanas = 10;
+          boolean hoyLlueve = false;
+          boolean hoyEstaSoleado = true;
+          System.Out.Println(cantidadDePeras + cantidadDeManzanas);
+        }
+    }
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 Clase 2(teorica):
 
@@ -370,7 +367,6 @@ Ejercicios:
           person.adjustAge(person.age);
           System.out.println("Adjusted age: " + person.age);
       }
-  
       public static class Person {
           public int age = 20;
   
@@ -379,309 +375,303 @@ Ejercicios:
               System.out.println("The age in adjustAge() is " + this.age);
           }
       }
-  }
+    }
+
 
 2-
-public class Solution {
-    public static void main(String[] args) {
-        Apple apple = new Apple();
-        apple.addPrice(50);
-        Apple apple2 = new Apple();
-        apple2.addPrice(100);
-        System.out.println("The cost of apples is " + Apple.applePrice);
-    }
-      public static class Apple {
-          public static int applePrice = 0;
-  
-          public static void addPrice(int applePrice) {
-              Apple.applePrice += applePrice;
-          }
-      }
-  }
-  
-  public class Cat {
-      private String name = "nameless cat";
-  
-      public void setName(String name) {
-          this.name = name;
-      }
-  
-      public static void main(String[] args) {
-          Cat cat = new Cat();
-          cat.setName("Simba");
-          System.out.println(cat.name);
-      }
-  }
-  
-  public class Cat {
-      private static int catCount = 0;
-      public static void addNewCat() {
-          Cat.catCount++;
-      }
-      public static void main(String[] args) {
-          Cat cat = new Cat();
-          addNewCat();
-          Cat cat2 = new Cat();
-          addNewCat();
-          System.out.println(Cat.catCount);
-      }
-  }
-  
-  public class Cat {
-      private static int catCount = 0;
-  
-      public static void setCatCount(int catCount) {
-          Cat.catCount = catCount;
-      }
-  
-      public static void main(String[] args) {
-  
-      }
-  }
-  
-  public class Cat {
-      private String fullName;
-  
-      public void setName(String firstName, String lastName) {
-          String fullName = firstName + " " + lastName;
-  
-          this.fullName = fullName;
-      }
-  
-      public static void main(String[] args) {
-  
-      }
-  }
-  
-  public class Solution {
-      public static void main(String[] args) {
-          compare(3);
-          compare(6);
-          compare(5);
-      }
-  
-      public static void compare(int a) {
-          if(a < 5){
-              System.out.println("The number is less than 5");
-          }else{
-              if(a > 5){
-                  System.out.println("The number is greater than 5");
-              }else{
-                  System.out.println("The number is equal to 5");
+    public class Solution {
+        public static void main(String[] args) {
+            Apple apple = new Apple();
+            apple.addPrice(50);
+            Apple apple2 = new Apple();
+            apple2.addPrice(100);
+            System.out.println("The cost of apples is " + Apple.applePrice);
+        }
+          public static class Apple {
+              public static int applePrice = 0;
+              public static void addPrice(int applePrice) {
+                  Apple.applePrice += applePrice;
               }
           }
-          
-      }
-  }
-  
-  public class Solution {
-      public static void main(String[] args) {
-          displayClosestToTen(8, 11);
-          displayClosestToTen(7, 14);
-      }
-      public static void displayClosestToTen(int a, int b) {
-          if((abs(10 - a))< (abs(10 - b)) ){
-              System.out.println(a);
-          }else if((abs(10 - a))> (abs(10 - b)) ){
-              System.out.println(b);
-          }
-          else{
-              System.out.println(b);
-          }
-      }
-      public static int abs(int a) {
-          if (a < 0) {
-              return -a;
-          } else {
-              return a;
-          }
-      }
-  }
-  
-  public class Solution {
-      public static void main(String[] args) {
-          checkInterval(60);
-          checkInterval(112);
-          checkInterval(10);
       }
   
-      public static void checkInterval(int a) {
-          if(a >= 50 && a <= 100){
-              System.out.println("The number " + a + " is in the interval.");
-          }else{
-              System.out.println("The number " + a + " is not in the interval.");
+      public class Cat {
+          private String name = "nameless cat";
+      
+          public void setName(String name) {
+              this.name = name;
+          }
+          public static void main(String[] args) {
+              Cat cat = new Cat();
+              cat.setName("Simba");
+              System.out.println(cat.name);
           }
       }
-  }
   
-  public class Solution {
-      public static void main(String[] args) throws Exception {
-          BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-          int year = Integer.parseInt(reader.readLine());
-          if(year % 400==0){
-              System.out.println("Number of days in the year: 366");
+      public class Cat {
+          private static int catCount = 0;
+          public static void addNewCat() {
+              Cat.catCount++;
           }
-          else if(year % 100==0 && year % 400!=0){
-              System.out.println("Number of days in the year: 365");
-          }
-          else if(year % 4==0){
-              System.out.println("Number of days in the year: 366");
-          }
-          else{
-              System.out.println("Number of days in the year: 365");
+          public static void main(String[] args) {
+              Cat cat = new Cat();
+              addNewCat();
+              Cat cat2 = new Cat();
+              addNewCat();
+              System.out.println(Cat.catCount);
           }
       }
-  }
-  
-  public class Solution {
-      public static void main(String[] args) throws Exception {
-          BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
-          double number =Double.parseDouble(reader.readLine());
-          int phase = (int) (number % 5);
-          if (phase >= 0 && phase < 3) {
-              System.out.println("green");
-          } else if (phase == 3) {
-              System.out.println("yellow");
-          } else {
-              System.out.println("red");
-          }
-      }
-  }
-  
-  public class Solution {
-      public static void main(String[] args) throws Exception {
-          BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-          int one = Integer.parseInt(reader.readLine());
-          int two = Integer.parseInt(reader.readLine());
-          
-          int min = 0;
-          if(one < two){
-              min = one;
-          }
-          else if(two < one){
-              min = two;
-          }else{
-              min = one;
-          }
-          System.out.println(min);
-      }
-  }
-  
-  public class Solution {
-      public static void main(String[] args) throws Exception {
-          BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-          int a = Integer.parseInt(reader.readLine());
-          int b = Integer.parseInt(reader.readLine());
-          int c = Integer.parseInt(reader.readLine());
-          int first;
-          int second;
-          int third;
-          if(a >= b && a >= c){
-              first = a;
-              if(b >= c){
-                  second = b;
-                  third = c;
-              }else{
-                  second = c;
-                  third = b;
-              }
-          }
-          else if(b >= a && b >= c){
-              first = b;
-              if(a >= c){
-                  second = a;
-                  third = c;
-              }else{
-                  second = c;
-                  third = a;
-              }
-          }else{
-              first = c;
-              if(a >= b){
-                  second = a;
-                  third = b;
-              }else{
-                  second = b;
-                  third = a;
-              }
-          }
-          System.out.println(first + " " + second + " " + third);
-          
-      }
-  }
 
-  public class Solution {
-      public static void main(String[] args) throws Exception {
-          int num1 = 1;
   
-      while (num1 <= 10) {
-          int mult = 1;
-  
-          while (mult <= 10) {
-              System.out.print(num1 * mult + " ");
-              mult++;
+      public class Cat {
+          private static int catCount = 0;
+      
+          public static void setCatCount(int catCount) {
+              Cat.catCount = catCount;
           }
+      
+          public static void main(String[] args) {
+      
+          }
+      }
   
-          System.out.println(); // Agrega una nueva línea después de cada fila
-          num1++;
+      public class Cat {
+          private String fullName;
+          public void setName(String firstName, String lastName) {
+              String fullName = firstName + " " + lastName;
+              this.fullName = fullName;
+          }
+          public static void main(String[] args) {
+          }
       }
+
+  
+      public class Solution {
+          public static void main(String[] args) {
+              compare(3);
+              compare(6);
+              compare(5);
+          }
+          public static void compare(int a) {
+              if(a < 5){
+                  System.out.println("The number is less than 5");
+              }else{
+                  if(a > 5){
+                      System.out.println("The number is greater than 5");
+                  }else{
+                      System.out.println("The number is equal to 5");
+                  }
+              }
+          }
+        }
+  
+      public class Solution {
+          public static void main(String[] args) {
+              displayClosestToTen(8, 11);
+              displayClosestToTen(7, 14);
+          }
+          public static void displayClosestToTen(int a, int b) {
+              if((abs(10 - a))< (abs(10 - b)) ){
+                  System.out.println(a);
+              }else if((abs(10 - a))> (abs(10 - b)) ){
+                  System.out.println(b);
+              }
+              else{
+                  System.out.println(b);
+              }
+          }
+          public static int abs(int a) {
+              if (a < 0) {
+                  return -a;
+              } else {
+                  return a;
+              }
+          }
       }
-  }
+  
+      public class Solution {
+          public static void main(String[] args) {
+              checkInterval(60);
+              checkInterval(112);
+              checkInterval(10);
+          }
+      
+          public static void checkInterval(int a) {
+              if(a >= 50 && a <= 100){
+                  System.out.println("The number " + a + " is in the interval.");
+              }else{
+                  System.out.println("The number " + a + " is not in the interval.");
+              }
+          }
+      }
+
+  
+      public class Solution {
+          public static void main(String[] args) throws Exception {
+              BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+              int year = Integer.parseInt(reader.readLine());
+              if(year % 400==0){
+                  System.out.println("Number of days in the year: 366");
+              }
+              else if(year % 100==0 && year % 400!=0){
+                  System.out.println("Number of days in the year: 365");
+              }
+              else if(year % 4==0){
+                  System.out.println("Number of days in the year: 366");
+              }
+              else{
+                  System.out.println("Number of days in the year: 365");
+              }
+          }
+      }
+  
+      public class Solution {
+          public static void main(String[] args) throws Exception {
+              BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
+              double number =Double.parseDouble(reader.readLine());
+              int phase = (int) (number % 5);
+              if (phase >= 0 && phase < 3) {
+                  System.out.println("green");
+              } else if (phase == 3) {
+                  System.out.println("yellow");
+              } else {
+                  System.out.println("red");
+              }
+          }
+      }
+
+  
+      public class Solution {
+          public static void main(String[] args) throws Exception {
+              BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+              int one = Integer.parseInt(reader.readLine());
+              int two = Integer.parseInt(reader.readLine());
+              int min = 0;
+              if(one < two){
+                  min = one;
+              }
+              else if(two < one){
+                  min = two;
+              }else{
+                  min = one;
+              }
+              System.out.println(min);
+          }
+      }
+
+  
+      public class Solution {
+          public static void main(String[] args) throws Exception {
+              BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+              int a = Integer.parseInt(reader.readLine());
+              int b = Integer.parseInt(reader.readLine());
+              int c = Integer.parseInt(reader.readLine());
+              int first;
+              int second;
+              int third;
+              if(a >= b && a >= c){
+                  first = a;
+                  if(b >= c){
+                      second = b;
+                      third = c;
+                  }else{
+                      second = c;
+                      third = b;
+                  }
+              }
+              else if(b >= a && b >= c){
+                  first = b;
+                  if(a >= c){
+                      second = a;
+                      third = c;
+                  }else{
+                      second = c;
+                      third = a;
+                  }
+              }else{
+                  first = c;
+                  if(a >= b){
+                      second = a;
+                      third = b;
+                  }else{
+                      second = b;
+                      third = a;
+                  }
+              }
+              System.out.println(first + " " + second + " " + third);
+              
+          }
+      }
+
+      public class Solution {
+          public static void main(String[] args) throws Exception {
+              int num1 = 1;
+          while (num1 <= 10) {
+              int mult = 1;
+              while (mult <= 10) {
+                  System.out.print(num1 * mult + " ");
+                  mult++;
+              }
+              System.out.println(); // Agrega una nueva línea después de cada fila
+              num1++;
+          }
+          }
+      }
 
 13-
-  public class Solution {
-      public static void main(String[] args) throws Exception {
-          for(int i =0; i< 10;i++){
-              System.out.print("8");
-          }
-          System.out.println("");
-          for(int i =0; i< 10;i++){
-              System.out.println("8");
+      public class Solution {
+          public static void main(String[] args) throws Exception {
+              for(int i =0; i< 10;i++){
+                  System.out.print("8");
+              }
+              System.out.println("");
+              for(int i =0; i< 10;i++){
+                  System.out.println("8");
+              }
           }
       }
-  }
   
 16-
-  public class Solution {
-      public static void main(String[] args) throws Exception {
-          BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-          int num1 = Integer.parseInt(reader.readLine());
-          int num2 = Integer.parseInt(reader.readLine());
-          int num3 = Integer.parseInt(reader.readLine());
-          int middle = 0;
-          if(num1 >= num2 && num1 >= num3 && num2 <= num3){
-              middle = num3;
+      public class Solution {
+          public static void main(String[] args) throws Exception {
+              BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+              int num1 = Integer.parseInt(reader.readLine());
+              int num2 = Integer.parseInt(reader.readLine());
+              int num3 = Integer.parseInt(reader.readLine());
+              int middle = 0;
+              if(num1 >= num2 && num1 >= num3 && num2 <= num3){
+                  middle = num3;
+              }
+              else if(num1 >= num2 && num1 >= num3 && num3 <= num2){
+                  middle = num2;
+              }
+              else if(num2 >= num1 && num2 >= num3 && num1 <= num3){
+                  middle = num3;
+              }
+              else if(num2 >= num1 && num2 >= num3 && num3 <= num1){
+                  middle = num1;
+              }
+              else if(num3 >= num1 && num3 >= num2 && num1 <= num2){
+                  middle = num2;
+              }
+              else if(num3 >= num1 && num3 >= num2 && num2 <= num1){
+                  middle = num1;
+              }
+              System.out.println(middle);
           }
-          else if(num1 >= num2 && num1 >= num3 && num3 <= num2){
-              middle = num2;
-          }
-          else if(num2 >= num1 && num2 >= num3 && num1 <= num3){
-              middle = num3;
-          }
-          else if(num2 >= num1 && num2 >= num3 && num3 <= num1){
-              middle = num1;
-          }
-          else if(num3 >= num1 && num3 >= num2 && num1 <= num2){
-              middle = num2;
-          }
-          else if(num3 >= num1 && num3 >= num2 && num2 <= num1){
-              middle = num1;
-          }
-          System.out.println(middle);
       }
-  }
   
-  public class Solution {
-      public static void main(String[] args) throws Exception {
-          BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-          String name = reader.readLine();
-          int year = Integer.parseInt(reader.readLine());
-          int month = Integer.parseInt(reader.readLine());
-          int day =Integer.parseInt(reader.readLine());
-          System.out.println("My name is " + name + ".");
-          System.out.println("I was born on " + month + "/" + day + "/" + year);
+      public class Solution {
+          public static void main(String[] args) throws Exception {
+              BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+              String name = reader.readLine();
+              int year = Integer.parseInt(reader.readLine());
+              int month = Integer.parseInt(reader.readLine());
+              int day =Integer.parseInt(reader.readLine());
+              System.out.println("My name is " + name + ".");
+              System.out.println("I was born on " + month + "/" + day + "/" + year);
+          }
       }
-  }
 
     Mas ejercicios:
   
@@ -702,40 +692,41 @@ public class Solution {
           }
           System.out.println(sum/count);
       }
-  }
+    }
 
-  public class Rectangle {
-    int left;
-    int top;
-    int width;
-    int height;
-    public void initialize(int left, int top, int width, int height){
-        this.left=left;
-        this.top=top;
-        this.width=width;
-        this.height=height;
+
+      public class Rectangle {
+        int left;
+        int top;
+        int width;
+        int height;
+        public void initialize(int left, int top, int width, int height){
+            this.left=left;
+            this.top=top;
+            this.width=width;
+            this.height=height;
+        }
+        public void initialize(Rectangle rectangle){
+            this.left=rectangle.left;
+            this.top=rectangle.top;
+            this.width=rectangle.width;
+            this.height=rectangle.height;
+        }
+        public void initialize(int left, int top, int width){
+            this.left=left;
+            this.top=top;
+            this.width=width;
+            this.height=0;
+        }
+        public void initialize(int left, int top){
+            this.left=left;
+            this.top=top;
+            this.width=0;
+            this.height=0;
+        }
+        public static void main(String[] args) {
+        }
     }
-    public void initialize(Rectangle rectangle){
-        this.left=rectangle.left;
-        this.top=rectangle.top;
-        this.width=rectangle.width;
-        this.height=rectangle.height;
-    }
-    public void initialize(int left, int top, int width){
-        this.left=left;
-        this.top=top;
-        this.width=width;
-        this.height=0;
-    }
-    public void initialize(int left, int top){
-        this.left=left;
-        this.top=top;
-        this.width=0;
-        this.height=0;
-    }
-    public static void main(String[] args) {
-    }
-}
 
     public class Solution {
       public static class Man{
@@ -775,7 +766,7 @@ public class Solution {
           Woman woman2 = new Woman("Jane", 65, "Ushuaia");
           System.out.println(woman2);
       }
-  }
+    }
 
     public class Solution {
       public static class Date{
@@ -794,9 +785,10 @@ public class Solution {
       public static void main(String[] args) {
           Date date = new Date(15, 01, 2024);
           System.out.println(date.toString());
-          
       }
   }
+
+  
     public class Circle {
       public Color color;
   
@@ -820,6 +812,8 @@ public class Solution {
           }
       }
   }
+
+  
   Llamar a un constructor desde otro: con this();
     public class Circle {
   
@@ -877,23 +871,25 @@ public class Solution {
           return min;
       }
   }
-    public class Solution {
-    public static void main(String[] args) throws Exception {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int maximum;
-        int count = Integer.parseInt(reader.readLine());
-        if(count > 0){
-            maximum = Integer.parseInt(reader.readLine());
-            for(int i =1; count > i; i++){
-                int currentNumber = Integer.parseInt(reader.readLine());
-                if(currentNumber> maximum){
-                    maximum=currentNumber;
+
+  
+        public class Solution {
+        public static void main(String[] args) throws Exception {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            int maximum;
+            int count = Integer.parseInt(reader.readLine());
+            if(count > 0){
+                maximum = Integer.parseInt(reader.readLine());
+                for(int i =1; count > i; i++){
+                    int currentNumber = Integer.parseInt(reader.readLine());
+                    if(currentNumber> maximum){
+                        maximum=currentNumber;
+                    }
                 }
+                System.out.println(maximum);
             }
-            System.out.println(maximum);
         }
     }
-}
 
     public class Solution {
       public static int max = 100;
@@ -908,12 +904,26 @@ public class Solution {
       }
   }
 
-  
-
-  
-
-
-  
+      public class Solution {
+        public static void main(String[] args) throws Exception {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            int array[] = new int[20];
+            int first[]=new int[10];
+            int second[]= new int[10];
+            for(int i=0; i<array.length;i++){
+                int number = Integer.parseInt(reader.readLine());
+                array[i]=number;
+                if(i<10){
+                    first[i] = number;
+                }else if(i<20){
+                    second[i-10]= number;
+                }
+            }
+            for(int i =0; i< second.length;i++){
+                System.out.println(second[i]);
+            }
+        }
+    }
   
   la clase ArrayList:
   Cada objeto ArrayList almacena una matriz regular de elementos. Cuando lee elementos de una ArrayList , los lee desde su matriz interna. Cuando los escribe en ArrayList,
@@ -981,44 +991,90 @@ public class Solution {
   Ejemplo 2:
 
   Igual que arriba, pero los números pares se agregan al final de la lista, los impares al principio.
-    public static void main(String[] args) throws IOException
-    {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        ArrayList<Integer> list = new ArrayList<Integer>();
-    
-        while (true)
+  
+        public static void main(String[] args) throws IOException
         {
-            String s = reader.readLine();
-            if (s.isEmpty()) break;
-    
-            int x = Integer.parseInt(s);
-            if (x % 2 == 0)  // Check that the remainder is zero when we divide by two
-                list.add(x);         // Add to the end
-            else
-                list.add(0, x);      // Add to the beginning
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            ArrayList<Integer> list = new ArrayList<Integer>();
+        
+            while (true)
+            {
+                String s = reader.readLine();
+                if (s.isEmpty()) break;
+        
+                int x = Integer.parseInt(s);
+                if (x % 2 == 0)  // Check that the remainder is zero when we divide by two
+                    list.add(x);         // Add to the end
+                else
+                    list.add(0, x);      // Add to the beginning
+            }
         }
-    }
     
   Divida una matriz en dos partes: números pares e impares
-    public static void main(String[] args) throws IOException
-    {
-        // Static initialization of the array
-        int[] data = {1, 5, 6, 11, 3, 15, 7, 8};
-        // Create a list where all elements are Integers
-        ArrayList&ltInteger> list = new ArrayList&ltInteger> ();
-        // Use the array to fill the list
-        for (int i = 0; i < data.length; i++) list.add(data[i]);
-        ArrayList&ltInteger> even = new ArrayList&ltInteger>();  // Even numbers
-        ArrayList&ltInteger> odd = new ArrayList&ltInteger>();    // Odd numbers
-        for (int i = 0; i < list.size(); i++)
+  
+        public static void main(String[] args) throws IOException
         {
-            Integer x = list.get(i);
-            if (x % 2 == 0)    // If x is even
-                even.add(x);   // Add x to the collection of even numbers
-            else
-                odd.add(x);    // Add x to the collection of odd numbers
+            // Static initialization of the array
+            int[] data = {1, 5, 6, 11, 3, 15, 7, 8};
+            // Create a list where all elements are Integers
+            ArrayList&ltInteger> list = new ArrayList&ltInteger> ();
+            // Use the array to fill the list
+            for (int i = 0; i < data.length; i++) list.add(data[i]);
+            ArrayList&ltInteger> even = new ArrayList&ltInteger>();  // Even numbers
+            ArrayList&ltInteger> odd = new ArrayList&ltInteger>();    // Odd numbers
+            for (int i = 0; i < list.size(); i++)
+            {
+                Integer x = list.get(i);
+                if (x % 2 == 0)    // If x is even
+                    even.add(x);   // Add x to the collection of even numbers
+                else
+                    odd.add(x);    // Add x to the collection of odd numbers
+            }
         }
-    }
+
+        public class Cat {
+          public static ArrayList<Cat> cats;
+    
+          static {
+              cats = new ArrayList<>();
+          }
+          public Cat() {
+          }
+
+          public static void main(String[] args) {
+              Cat cat1 = new Cat();
+              Cat cat2 = new Cat();
+              Cat cat3 = new Cat();
+              Cat cat4 = new Cat();
+              Cat cat5 = new Cat();
+              Cat cat6 = new Cat();
+              Cat cat7 = new Cat();
+              Cat cat8 = new Cat();
+              Cat cat9 = new Cat();
+              Cat cat10 = new Cat();
+              Cat.cats.add(cat1);
+              Cat.cats.add(cat2);
+              Cat.cats.add(cat3);
+              Cat.cats.add(cat4);
+              Cat.cats.add(cat5);
+              Cat.cats.add(cat6);
+              Cat.cats.add(cat7);
+              Cat.cats.add(cat8);
+              Cat.cats.add(cat9);
+              Cat.cats.add(cat10);
+              printCats();
+          }
+      
+          public static void printCats() {
+              for(int i=0; i<cats.size(); i++){
+                  System.out.println(Cat.cats.get(i));
+              }
+              
+          }
+      }
+
+      
+
 
     Interfaz	Clase/implementación	 Descripción
     List	     ArrayList	           Lista
@@ -1028,44 +1084,169 @@ public class Solution {
     Set  	     HashSet	             Set
                Treeset	             Set
                SortedSet	           SortedSet
-    Map	       hashmap 	            Map/diccionario
+    Map	       hashmap 	             Map/diccionario
                TreeMap	             Mapa/diccionario
-               SortedMap	         Diccionario ordenado
+               SortedMap	           Diccionario ordenado
                HashTable	           HashTable
 
     Iteradores:
-        public static void main(String[] args)
-    {
-        Set&ltString> set = new HashSet&ltString>();
-        set.add("Rain");
-        set.add("In");
-        set.add("Spain");
-         // Get an iterator for the set
-         Iterator&ltString> iterator = set.iterator();
-        while (iterator.hasNext())        // Check if there is another element
-        {
-           // Get the current element and move to the next one
-           String text = iterator.next();
-            System.out.println(text);
+    
+        public static void main(String[] args){
+          Set&ltString> set = new HashSet&ltString>();
+          set.add("Rain");
+          set.add("In");
+          set.add("Spain");
+           // Get an iterator for the set
+           Iterator&ltString> iterator = set.iterator();
+          while (iterator.hasNext())        // Check if there is another element
+          {
+             // Get the current element and move to the next one
+             String text = iterator.next();
+              System.out.println(text);
+          }
         }
-    }
 
     Ejemplo:
-      public static void main(String[] args){
-        Set<String> set = new HashSet<String>();
-        set.add("Stop");
-        set.add("Look");
-        set.add("Listen");
-        Iterator<String> iterator = set.iterator();
-        while (iterator.hasNext())
-        {
-            String text = iterator.next();
-            System.out.println(text);
-        }
-    }
+          public static void main(String[] args){
+            Set<String> set = new HashSet<String>();
+            set.add("Stop");
+            set.add("Look");
+            set.add("Listen");
+            Iterator<String> iterator = set.iterator();
+            while (iterator.hasNext()){
+                String text = iterator.next();
+                System.out.println(text);
+            }
+          }
 
+          Mostrar elementos de un mapa
+            public static void main(String[] args)
+            {
+                // All elements are stored in pairs
+                Map<String, String> map = new HashMap<String, String>();
+                map.put("first", "Rain");
+                map.put("second", "In");
+                map.put("third", "Spain");
+            
+                Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
+            
+               while (iterator.hasNext())
+                {
+                    // Get a key-value pair
+                    Map.Entry<String, String> pair = iterator.next();
+                    String key = pair.getKey();            // Key
+                    String value = pair.getValue();        // Value
+                    System.out.println(key + ":" + value);
+                }
+            }
+
+            1. El método next() devuelve el siguiente elemento de la colección.
+
+            2. El método hasNext() comprueba si todavía hay elementos que next() no ha devuelto
+
+            For each:
+            public static void main(String[] args)
+            {
+                Set&ltString> set = new HashSet&ltString>();
+                set.add("Rain");
+                set.add("In");
+                set.add("Spain");
+            
+               for (String text : set)
+                {
+                    System.out.println(text);
+                }
+            }
+            Mostrar elementos de un conjunto
+            public static void main(String[] args)
+            {
+                Set&ltString> set = new HashSet&ltString>();
+                set.add("Rain");
+                set.add("In");
+                set.add("Spain");
+            
+                for (String text : set)
+                {
+                    System.out.println(text);
+                }
+            }
+            
+            Mostrar elementos de una Lista
+            public static void main(String[] args)
+            {
+                List&ltString> list = new ArrayList&ltString>();
+                list.add("Rain");
+                list.add("In");
+                list.add("Spain");
+            
+                 for (String text : list)
+                {
+                    System.out.println(text);
+                }
+            }
+            
+            Mostrar elementos de un mapa
+            public static void main(String[] args)
+            {
+                Map<String, String> map = new HashMap<String, String>();
+                map.put("first", "Rain");
+                map.put("second", "In");
+                map.put("third", "Spain");
+            
+                for (Map.Entry<String, String> pair : map.entrySet())
+                {
+                    String key = pair.getKey();                      // Key
+                    String value = pair.getValue();                  // Value
+                    System.out.println(key + ":" + value);
+                }
+            }
+
+            Internamente, ArrayList se implementa como una matriz ordinaria . Es por eso que insertar un elemento en el medio requiere que primero cambiemos todos los
+            elementos sucesivos por uno y luego coloquemos el nuevo elemento en la ranura libre. Obtener y configurar elementos (get, set ) es rápido , ya que estas
+            operaciones simplemente abordan el elemento de matriz relevante
+            LinkedList tiene una estructura interna diferente. Se implementa como una lista con elementos interconectados : un conjunto de elementos distintos, cada uno 
+            de los cuales almacena referencias a los elementos siguientes y anteriores en la lista. Para insertar un elemento en el medio de dicha lista, solo necesita
+            cambiar las referencias de sus futuros vecinos.Sin embargo, para obtener el elemento No. 130, debe ejecutar cada objeto del 0 al 130. En otras palabras, 
+            las operaciones de obtención y configuración serán lentas
+
+            Descripción	            Operación	  ArrayList	LinkedList
+            obtener un elemento	    get	        Rápido	Lento
+            Establecer un elemento	put	        Rápido	Lento
+            Agregar un elemento	    add	        Rápido	Rápido
+            (al final)
+            Insertar un elemento 	  add       	Lento	  Rápido
+            (posición arbitraria)   (yo, valor)
+            Quitar un elemento	    remove	    Lento	  Rápido
+
+            Para mantenerlo simple, le daré la siguiente regla: si va a insertar (o eliminar) elementos con frecuencia en medio de la colección, es mejor usar LinkedList.
+            En todos los demás casos, ArrayList funciona mejor 
     
+            Set:
+            Set es un conjunto, un grupo de objetos no numerados. La característica principal de un Set es que solo contiene objetos únicos , es decir, cada elemento
+            del conjunto es diferente . Aquí hay operaciones que puede realizar en un conjunto:
 
+            Operación	                            Método
+            Añadir elemento(s)	                  add(), addAll()
+            Quitar elemento(s)	                  remove(), removeAll()
+            Comprobar la presencia de elemento(s)	contains(), containsAll()
+
+            Map:
+            Map es un conjunto de pares. Es como un conjunto, excepto que es un conjunto de pares clave-valor en lugar de elementos únicos. La única limitación es que 
+            cada « clave» debe ser única . Un map no puede contener dos pares con el mismas llaves 
+
+            Operación	                                        Método
+            Obtener un conjunto de todos los pares	          conjuntoentrada()
+            Consigue un juego de todas las llaves	            juego de llaves()
+            Obtener un conjunto de todos los valores	        valores()
+            Añadir un par	                                    put (clave, valor)
+            Obtener el valor de la clave especificada	        obtener la clave)
+            Comprobar si la clave especificada está presente	contiene clave (clave)
+            Comprobar si el valor especificado está presente	contieneValor(valor)
+            Comprobar si el Mapa está vacío	                  isEmpty()
+            Borrar el mapa	                                  clear()
+            Eliminar el valor de la clave especificada	      eliminar (clave)
+
+            
     
 
 ---------------------------------------------------------------------------------------------------------------------------------------
@@ -1146,6 +1327,71 @@ Reglas de visibilidad
   Cuando llamas a un método usando <object> dot <method name> , en realidad estás llamando a un método de clase y pasando ese mismo objeto como primer argumento. Dentro 
   del método, el objeto se llama 'this' . Todas las operaciones en el se realizan en este objeto y sus datos
 
+    Objeto Date:
+    Obtener la fecha actual:
+    public static void main(String[] args) throws Exception
+    {
+         Date today = new Date();
+         System.out.println("Current date: " + today);
+    }
+    Calcular la diferencia entre las dos fechas.
+    public static void main(String[] args) throws Exception
+    {
+        Date currentTime = new Date();           // Get the current date and time
+        Thread.sleep(3000);                      // Wait 3 seconds (3000 milliseconds)
+        Date newTime = new Date();               // Get the new current time
+    
+        long msDelay = newTime.getTime() - currentTime.getTime(); // Calculate the difference
+        System.out.println("Time difference is: " + msDelay + " in ms");
+    }
+    Compruebe si ha pasado una cierta cantidad de tiempo:
+    public static void main(String[] args) throws Exception
+    {
+        Date startTime = new Date();
+        long endTime = startTime.getTime() + 5000;  //    +5 seconds
+        Date endDate = new Date(endTime);
+        Thread.sleep(3000);              // Wait 3 seconds
+        Date currentTime = new Date();
+        if(currentTime.after(endDate))// Check whether currentTime is after endDate
+        {
+            System.out.println("End time!");
+        }
+    }
+    Determine cuánto tiempo ha pasado desde el comienzo del día:
+    public static void main(String[] args) throws Exception
+    {
+        Date currentTime = new Date();
+        int hours = currentTime.getHours();
+        int mins = currentTime.getMinutes();
+        int secs = currentTime.getSeconds();
+        System.out.println("Time since midnight " + hours + ":" + mins + ":" + secs);
+    }
+    Determine cuántos días han pasado desde el comienzo del año:
+    public static void main(String[] args) throws Exception
+    {
+        Date yearStartTime = new Date();
+        yearStartTime.setHours(0);
+        yearStartTime.setMinutes(0);
+        yearStartTime.setSeconds(0);
+        yearStartTime.setDate(1);      // First day of the month
+        yearStartTime.setMonth(0);     // January (the months are indexed from 0 to 11)
+        Date currentTime = new Date();
+        long msTimeDifference = currentTime.getTime() - yearStartTime.getTime();
+        long msDay = 24 * 60 * 60 * 1000;  // The number of milliseconds in 24 hours
+        int dayCount = (int) (msTimeDifference/msDay); // The number of full days
+        System.out.println("Days since the start of the year: " + dayCount);
+    }
+
+      El getTime()método devuelve el número de milisegundos almacenados en un objeto Date". El after()método verifica si la fecha en la que llamamos al método es 
+      posterior a la fecha que se pasó al método. Los getHours(), getMinutes(), getSeconds()métodos devuelven la cantidad de horas, minutos y segundos, respectivamente,
+      para el objeto en el que fueron llamados. Además, en el último ejemplo puede ver que puede cambiar la fecha/hora almacenada en un objeto Fecha . Obtenemos la hora 
+      y la fecha actuales y luego restablecemos las horas, los minutos y los segundos a 0. También configuramos enero como el mes y 1 como el día del mes. Así, el
+      yearStartTimeobjeto almacena la fecha 1 de enero del año en curso y la hora 00:00:00.
+      Después de eso, obtenemos nuevamente la fecha actual ( currentTime), calculamos la diferencia entre las dos fechas en milisegundos y la almacenamos en
+      msTimeDifference. Luego dividimos msTimeDifferencepor la cantidad de milisegundos en 24 horas para obtener la cantidad de días completos desde el comienzo del 
+      año actual hasta hoy
+
+      
   
 
 ---------------------------------------------------------------------------------------------------------------------------------------
