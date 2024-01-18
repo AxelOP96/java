@@ -924,6 +924,98 @@ Ejercicios:
             }
         }
     }
+      An array also consists of "boxes". You can put something (an element) into each box. To access an element, you need to know its box number (index).
+
+      This is how an array is created:
+      
+      public class Main {
+      
+         public static void main(String[] args) {
+      
+             String [] birthdays = new String[10];
+      
+         }
+      }
+
+      features of the array:
+        It stores elements of a well-defined data type. If we create a String array, we can't store anything else in it. The data type is specified when the array is
+        created. This is where it differs from a safety deposit box (in which a customer can store what he or she wants).
+        
+        Its size must be specified when the array is created. You can't indicate it later or change its size after the array is created.
+        The fact that we are creating an array is indicated by the square brackets on both sides of the expression. They can be specified before or after the name of 
+        the reference variable. Either way will work:
+        
+        String [] birthdays = new String[10];
+        String birthdays [] = new String[10];
+
+        you can create an array of ints like this:
+
+          public class Main {
+          
+             public static void main(String[] args) {
+                 int numbers [] = {7, 12, 8, 4, 33, 79, 1, 16, 2};
+             }
+          }
+          
+          This technique is called "shortcut initialization". It's quite convenient, because we simultaneously create an array and fill it with values. We don't have 
+          to explicitly specify the array size: with shortcut initialization, the length field is set automatically.
+
+          Let's say we have an array of three Cat objects:
+
+          public class Cat {
+          
+             private String name;
+          
+             public Cat(String name) {
+                 this.name = name;
+             }
+          
+             public static void main(String[] args) {
+          
+                 Cat[] cats = new Cat[3];
+                 cats[0] = new Cat("Thomas");
+                 cats[1] = new Cat("Behemoth");
+                 cats[2] = new Cat("Lionel Messi");
+             }
+          }
+          
+          You need to understand a few things here:
+          In the case of primitives, an array stores a set of specific values (e.g. ints). In the case of objects, an array stores a set of references.
+          The cats array consists of three elements, each of which is a reference to a Cat object. Each of the references points to the memory address where the
+          corresponding object is stored.
+          
+          Array elements are arranged in a single block in memory. This is done to allow them to be accessed quickly and efficiently.
+          Thus, cats references the block of memory where all the objects (array elements) are stored. Cats[0] references a specific address within this block
+
+          It's important to understand that an array doesn't just store objects: it is an object itself.
+          This leads us to question whether we can create not only array of strings or numbers, but also arrays of arrays.
+          And the answer is yes, we can! An array can store any objects, including other arrays.
+          Such an array is called two-dimensional. If we were to represent it visually, it will be very similar to an ordinary table.
+          In code, initialization of a two-dimensional array looks like this:
+
+            public static void main(String[] args) {
+               Cat[][] cats = new Cat[3][5];
+            }
+            Because a two-dimensional array consists of several arrays, in order to iterate through it and display all its values (or populate all its elements), we need 
+            a nested loop:
+
+            for (int i = 0; i < cats.length; i++) {
+               for (int j = 0; j < cats[i].length; j++) {
+                   System.out.println(cats[i][j]);
+               }
+            }
+            In the outer loop (variable i), we iterate over all the arrays in our two-dimensional array. In the inner loop (variable j), we pass through all the elements
+            of each array.
+            
+            As a result, cats[0][0] (first array, first element) will be displayed first, followed by cats[0][1] (first array, second element). After we've gone through
+            the first array, we'll display cats[1][0], cats[1][1], cats[1][2], etc.
+            
+            By the way, two-dimensional arrays also support shorthand initialization:
+            
+            int[][] numbers = {{1,2,3}, {4,5,6}, {7,8,9}};
+
+    
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   
   la clase ArrayList:
   Cada objeto ArrayList almacena una matriz regular de elementos. Cuando lee elementos de una ArrayList , los lee desde su matriz interna. Cuando los escribe en ArrayList,
@@ -1245,6 +1337,174 @@ Ejercicios:
             Comprobar si el Mapa está vacío	                  isEmpty()
             Borrar el mapa	                                  clear()
             Eliminar el valor de la clave especificada	      eliminar (clave)
+
+            Ejercicios:
+            Buscar el String mas corto y si se repite en longitud mostrarlo.
+            public class Solution {
+              public static void main(String[] args) throws Exception {
+                  ArrayList<String> list = new ArrayList();
+                  BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                  for(int i=0; i<5;i++){
+                      String word = reader.readLine();
+                      list.add(word);
+                  }
+                  String min = "aaaaaaaaaaaa";
+                  int longitud =min.length();
+                  for(int i=0; i<list.size();i++){
+                      if(list.get(i).length()< longitud){
+                          min = list.get(i);
+                          longitud = list.get(i).length();
+                      }
+                  }
+                  for(String show: list){
+                      if(longitud == show.length() && min != show){
+                          System.out.println(show);
+                      }
+                  }
+                  System.out.println(min);
+              }   
+          }
+
+          Agrega el ultimo elemento al principio y elimina el que se copio, un total de 13 veces
+          public class Solution {
+            public static void main(String[] args) throws Exception {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                ArrayList<String> list = new ArrayList();
+                for(int i =0;i <5;i++){
+                    String word= reader.readLine();
+                    list.add(word);
+                }
+                for(int i=0; i< 13;i++){
+                    String last =list.get(4);
+                    list.add(0, last);
+                    list.remove(5);
+                }
+                for(String show: list){
+                    System.out.println(show);
+                }
+            }
+        }
+
+        El programa busca el string mas corto y el más largo de la lista y muestra el que aparece primero
+        public class Solution {
+          public static void main(String[] args) throws Exception {
+              ArrayList<String> list = new ArrayList();
+              BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+              for(int i=0; i<10;i++){
+                  String word= reader.readLine();
+                  list.add(word);
+              }
+              String shorter = "";
+              String longer ="";
+              int iShorter=0;
+              int iLonger=0;
+              for(int i =0; i<10;i++){
+                  if(i==0){
+                      shorter = list.get(i);
+                      longer = list.get(i);
+                  }else{
+                      if(shorter.length() > list.get(i).length() ){
+                          shorter = list.get(i);
+                          iShorter = i;
+                      }
+                      if(longer.length() < list.get(i).length() ){
+                          longer = list.get(i);
+                          iLonger = i;
+                      }
+                  }
+                  
+              }
+              if(iShorter < iLonger){
+                  System.out.println(list.get(iShorter));
+              }else{
+                  System.out.println(list.get(iLonger));
+              }
+              
+          }
+      }
+
+      Genera 3 listas y guarda los numeros divisibles por 2, por 3 y los restantes en una lista:
+      public class Solution {
+        public static void main(String[] args) throws Exception {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            ArrayList<Integer> div = new ArrayList();
+            ArrayList<Integer> div3 = new ArrayList();
+            ArrayList<Integer> div2 = new ArrayList();
+            ArrayList<Integer> divBoth = new ArrayList();
+            
+            for(int i=0; i<20; i++){
+                Integer number = Integer.parseInt(reader.readLine());
+                div.add(number);
+                if(number%2==0 || number%3==0){
+                    if(number%3 ==0){
+                        div3.add(number);
+                    }
+                    if(number%2==0){
+                        div2.add(number);
+                    }
+                }else{
+                    divBoth.add(number);
+                }
+            }
+            
+            printList(div3);
+            printList(div2);
+            printList(divBoth);
+        }
+        public static void printList(List<Integer> list) {
+            for(Integer show : list){
+                System.out.println(show);
+            }
+        }
+    }
+
+    Agregar palabras en el medio de un ArrayList:
+    public class Solution {
+      public static void main(String[] args) throws Exception {
+          BufferedReader reader= new BufferedReader(new InputStreamReader(System.in));
+          ArrayList<String> list = new ArrayList();
+          list.add("Sam");
+          list.add("I");
+          list.add("Am");
+          for(int i=1; i<=list.size();i+=2){
+              list.add(i, "Ham");
+          }
+          for(String show : list){
+              System.out.println(show);
+          }
+      }
+  }
+
+      Duplicar los elementos de una lista:
+            public class Solution {
+                public static void main(String[] args) throws Exception {
+                    // Read strings from the console and declare an ArrayList here
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                    ArrayList<String> list = new ArrayList();
+                    for(int i=0; i<10;i++){
+                        String word = reader.readLine();
+                        list.add(word);
+                    }
+                    ArrayList<String> result = doubleValues(list);
+                    for(String show : result){
+                        System.out.println(show);
+                    }
+                }
+                public static ArrayList<String> doubleValues(ArrayList<String> list) {
+                    //ArrayList<String> doubleValues = new ArrayList();
+                    for(int i=0; i<list.size(); i+=2){
+                        list.add(i+1,list.get(i));
+                    }
+                    return list;
+                }
+            }
+            
+
+
+
+
+
+
 
             
     
