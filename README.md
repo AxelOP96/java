@@ -618,20 +618,20 @@ Ejercicios:
           }
       }
 
-13-
-      public class Solution {
-          public static void main(String[] args) throws Exception {
-              for(int i =0; i< 10;i++){
-                  System.out.print("8");
-              }
-              System.out.println("");
-              for(int i =0; i< 10;i++){
-                  System.out.println("8");
-              }
-          }
-      }
-  
-16-
+
+        public class Solution {
+            public static void main(String[] args) throws Exception {
+                for(int i =0; i< 10;i++){
+                    System.out.print("8");
+                }
+                System.out.println("");
+                for(int i =0; i< 10;i++){
+                    System.out.println("8");
+                }
+            }
+        }
+
+    
       public class Solution {
           public static void main(String[] args) throws Exception {
               BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -899,7 +899,6 @@ Ejercicios:
           int a = Integer.parseInt(reader.readLine());
           int b = Integer.parseInt(reader.readLine());
           Solution.max = a > b ? a : b;
-  
           System.out.println(max + Solution.max);
       }
   }
@@ -929,11 +928,8 @@ Ejercicios:
       This is how an array is created:
       
       public class Main {
-      
          public static void main(String[] args) {
-      
              String [] birthdays = new String[10];
-      
          }
       }
 
@@ -951,7 +947,6 @@ Ejercicios:
         you can create an array of ints like this:
 
           public class Main {
-          
              public static void main(String[] args) {
                  int numbers [] = {7, 12, 8, 4, 33, 79, 1, 16, 2};
              }
@@ -963,15 +958,12 @@ Ejercicios:
           Let's say we have an array of three Cat objects:
 
           public class Cat {
-          
              private String name;
-          
              public Cat(String name) {
                  this.name = name;
              }
           
              public static void main(String[] args) {
-          
                  Cat[] cats = new Cat[3];
                  cats[0] = new Cat("Thomas");
                  cats[1] = new Cat("Behemoth");
@@ -1013,6 +1005,25 @@ Ejercicios:
             By the way, two-dimensional arrays also support shorthand initialization:
             
             int[][] numbers = {{1,2,3}, {4,5,6}, {7,8,9}};
+
+            the task of sorting an array, which we tried to handle, is solved in a single line:
+
+              public class Main {
+                 public static void main(String[] args) {
+                     int[] numbers = {167, -2, 16, 99, 26, 92, 43, -234, 35, 80};
+                     Arrays.sort(numbers);
+                     System.out.println(Arrays.toString(numbers));
+                 }
+              }
+
+              The Arrays.sort() method sorts the array. And its algorithm is much more efficient than the code we wrote.
+              Console output:
+              [-234, -2, 16, 26, 35, 43, 80, 92, 99, 167]
+              Note: To convert the array to a string, we used another method of the Arrays class: Arrays.toString().
+              Arrays in Java don't override the toString() method on their own. So, if you simply write 
+              System.out.println(numbers.toString())
+              the Object class's toString() will be called. For an array, the output will be something like this:
+              [I@4554617c
 
     
   --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1071,6 +1082,25 @@ Ejercicios:
   ArrayList es un buen ejemplo. Cuando creamos un nuevo objeto ArrayList, es conveniente indicar el tipo de valores que se almacenarán dentro de esta lista
   ArrayList<String> list = new ArrayList<String>();	//Cree una variable ArrayList llamada list. Asígnele un objeto ArrayList. Esta lista solo puede almacenar objetos String
   ArrayList list = new ArrayList();	Cree una variable ArrayList llamada list. Asígnele un objeto ArrayList. Esta lista puede almacenar cualquier valor.
+  
+  The first order of business is to check whether the internal array has enough space in the internal array and whether one more element will fit. If there is space, 
+  then the new element is added to the end of the list. When we say "to the end", we don't mean the last position in the array (that would be weird). We mean the 
+  position following the last current element. Its index will be cars.size(). Our list is currently empty (cars.size() == 0). Accordingly, the new element will be added 
+  at position 0.
+
+    ArrayList<Car> cars = new ArrayList<>();
+    Car ferrari = new Car("Ferrari 360 Spider");
+    cars.add(ferrari);
+
+     Agregar un elemento en un lugar ocupado:
+     cars.add(ferrari);
+     cars.add(bugatti);
+     cars.add(lambo);
+  
+     cars.add(1, ford);// add ford to cell 1, which is already occupied
+
+     ---------------------------------------------------------------------------------------------------------------------------------------------------------
+     
 
   Clases Wrapper:
   tipo primitivo	Clase	    Lista
@@ -1181,6 +1211,197 @@ Ejercicios:
                SortedMap	           Diccionario ordenado
                HashTable	           HashTable
 
+    Collections:
+          In Java, a group of data structures is commonly referred to as a collection. Data can be stored in many different ways. So far, we have only studied the 
+          ArrayList class, where data is stored in an array. We'll get acquainted with other collections later. For now, it's enough to just understand that the 
+          Collections class is designed to work not only with ArrayList, but also with other types of collections (hence, its name).
+      
+          So, what tasks does the Collections class actually help with when working with ArrayList?
+          
+          The first and most obvious is sorting. In the lesson about arrays, we considered an example with numbers. Now we'll consider an example with strings. The 
+          Collections class implements the sort() method for sorting the contents of collections:
+      
+          public class Main {
+             public static void main(java.lang.String[] args) {
+                 String mercury = new String("Mercury");
+                 String venus = new String("Venus");
+                 String earth = new String("Earth");
+                 String mars = new String("Mars");
+                 String jupiter = new String("Jupiter");
+                 String saturn = new String("Saturn");
+                 String uranus = new String("Uranus");
+                 String neptune = new String("Neptune");
+                 ArrayList<String> solarSystem = new ArrayList<>(Arrays.asList(mercury, venus, earth, mars,
+                         jupiter, saturn, uranus, neptune));
+                 Collections.sort(solarSystem);
+                 System.out.println(solarSystem);
+             }
+          }
+      
+      Output:
+      
+      [Earth, Jupiter, Mars, Mercury, Neptune, Saturn, Uranus, Venus]
+      
+      The strings are sorted alphabetically!
+
+      The Collections class also helps you find the minimum and maximum element in an ArrayList. This is done using the min() and max() methods:
+
+      public static void main(java.lang.String[] args) {
+      
+         ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7));
+         System.out.println(Collections.max(numbers));
+         System.out.println(Collections.min(numbers));
+      
+      }
+      
+      Output:
+      
+      7
+      1
+      Another very useful method is reverse(). If we had to "flip" the list so the elements went in the opposite order, how would we do it? It probably wouldn't be 
+      so easy to write such an algorithm by yourself :)
+
+      Fortunately, the reverse() method already knows how. Suppose we don't like the fact that the sort() method sorted our planets alphabetically, and we want to 
+      reverse their order: from Z to A:
+
+      public class Main {
+         public static void main(java.lang.String[] args) {
+             String mercury = new String("Mercury");
+             String venus = new String("Venus");
+             String earth = new String("Earth");
+             String mars = new String("Mars");
+             String jupiter = new String("Jupiter");
+             String saturn = new String("Saturn");
+             String uranus = new String("Uranus");
+             String neptune = new String("Neptune");
+             ArrayList<String> solarSystem = new ArrayList<>(Arrays.asList(mercury, venus, earth, mars,jupiter, saturn, uranus, neptune));
+             Collections.sort(solarSystem);
+             Collections.reverse(solarSystem);
+             System.out.println(solarSystem);
+         }
+      }
+
+      Output:
+      
+      [Venus, Uranus, Saturn, Neptune, Mercury, Mars, Jupiter, Earth]
+      suppose we're trying to implement a bingo game. We add 100 numbers to the drum. They should appear on the screen one at a time.The first player to cross out all 
+      the numbers on his ticket wins. This is easy to implement using the shuffle() method:
+
+      public class Main {
+         public static void main(java.lang.String[] args) {
+             ArrayList<Integer> bingoDrum = new ArrayList<>(100);
+             for (int i = 1; i <= 100; i++) {
+                 bingoDrum.add(i);// add the numbers 1 to 100 to the drum
+             }
+             Collections.shuffle(bingoDrum);// Mix it up
+             System.out.println ("Your attention, please! Here are the first 10 numbers from the drum!");
+             for (int i = 0; i < 10; i++) {
+                 System.out.println(bingoDrum.get(i));
+             }
+         }
+      }
+
+      Output:
+      
+      Your attention, please! Here are the first 10 numbers from the drum!
+      32
+      61
+      4
+      81
+      25
+      8
+      66
+      35
+      42
+      71
+
+      imagine a different situation. Previously, we created a solarSystem list that contained the planets.And it seems to suit us in every way but one: you can delete
+      items from it and add new ones! This is clearly not the behavior we expect: The solar system should be unchangeable in our program. The Collections class has a very
+      interesting method: unmodifiableList(). It creates an immutable list from the list passed as an argument. You can't add or delete items from this list.
+      When dealing with the list of planets in the solar system, this is exactly what we want!
+
+      public class Main {
+      
+         public static void main(java.lang.String[] args) {
+      
+             String mercury = new String("Mercury");
+             String venus = new String("Venus");
+             String earth = new String("Earth");
+             String mars = new String("Mars");
+             String jupiter = new String("Jupiter");
+             String saturn = new String("Saturn");
+             String uranus = new String("Uranus");
+             String neptune = new String("Neptune");
+      
+             List<String> solarSystem = Collections.unmodifiableList(new ArrayList<>(Arrays.asList(mercury, venus, earth, mars,
+                     jupiter, saturn, uranus, neptune)));
+             solarSystem.add("Pluto");// Try to add a new element
+         }
+      }
+
+      Output:
+      
+      Exception in thread "main" java.lang.UnsupportedOperationException
+      	at java.util.Collections$UnmodifiableCollection.add(Collections.java:1075)
+      	at Main.main(Main.java:21)
+       Finally, we'll get acquainted with a very interesting method: disjoint(). It checks whether two collections intersect, i.e., whether they have at least one
+       identical element. If they do not, it returns true.  It they do, then it returns false
+
+        public class Main {
+        
+           public static void main(java.lang.String[] args) {
+        
+               String mercury = new String("Mercury");
+               String venus = new String("Venus");
+               String earth = new String("Earth");
+               String mars = new String("Mars");
+               String jupiter = new String("Jupiter");
+               String saturn = new String("Saturn");
+               String uranus = new String("Uranus");
+               String neptune = new String("Neptune");
+        
+               ArrayList<String> solarSystemPart1 = new ArrayList<>(Arrays.asList(mercury, venus, earth, mars));
+               ArrayList<String> solarSystemPart2 = new ArrayList<>(Arrays.asList(jupiter, saturn, uranus, neptune));
+        
+               System.out.println(Collections.disjoint(solarSystemPart1, solarSystemPart2));
+        
+           }
+        }
+
+        As you can see, our two lists have completely different elements, so the program outputs true. This is an interesting and very useful class. Like Arrays, it does 
+        a lot of routine, tedious work for us, letting us focus on other things.
+
+        import java.util.*;
+        import java.util.HashMap;
+        import java.util.Map;
+        
+        public class Solution {
+            public static void main(String[] args) throws Exception {
+                HashMap<String, String> mapList = new HashMap();
+                mapList.put("watermelon", "melon");
+                mapList.put("banana", "fruit");
+                mapList.put("cherry", "fruit");
+                mapList.put("pear", "fruit");
+                mapList.put("cantaloupe", "melon");
+                mapList.put("blackberry", "fruit");
+                mapList.put("ginseng", "root");
+                mapList.put("strawberry", "fruit");
+                mapList.put("iris", "flower");
+                mapList.put("potato", "tuber");
+                Iterator<Map.Entry<String, String>> iterator = mapList.entrySet().iterator();
+                         while (iterator.hasNext())
+                          {
+                              Map.Entry<String, String> pair = iterator.next();
+                              String key = pair.getKey();            // Key
+                              String value = pair.getValue();        // Value
+                              System.out.println(key + " - " + value);
+                          }
+            }
+        }
+        
+
+
+
     Iteradores:
     
         public static void main(String[] args){
@@ -1222,15 +1443,15 @@ Ejercicios:
             
                 Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
             
-               while (iterator.hasNext())
-                {
-                    // Get a key-value pair
-                    Map.Entry<String, String> pair = iterator.next();
-                    String key = pair.getKey();            // Key
-                    String value = pair.getValue();        // Value
-                    System.out.println(key + ":" + value);
-                }
-            }
+                 while (iterator.hasNext())
+                  {
+                      // Get a key-value pair
+                      Map.Entry<String, String> pair = iterator.next();
+                      String key = pair.getKey();            // Key
+                      String value = pair.getValue();        // Value
+                      System.out.println(key + ":" + value);
+                  }
+              }
 
             1. El método next() devuelve el siguiente elemento de la colección.
 
@@ -1311,7 +1532,133 @@ Ejercicios:
             Quitar un elemento	    remove	    Lento	  Rápido
 
             Para mantenerlo simple, le daré la siguiente regla: si va a insertar (o eliminar) elementos con frecuencia en medio de la colección, es mejor usar LinkedList.
-            En todos los demás casos, ArrayList funciona mejor 
+            En todos los demás casos, ArrayList funciona mejor.
+            The elements in a Java LinkedList are actually links in a single chain. In addition to data, each element stores references to the previous and next elements.
+            These references let you move from one element to another. 
+
+            This is how you create one:
+            
+            public class Main {
+            
+               public static void main(java.lang.String[] args) {
+            
+                   String str1 = new String("Hello World!");
+                   String str2 = new String("My name is Earl");
+                   String str3 = new String("I love Java");
+                   String str4 = new String("I live in Canada");
+            
+                   LinkedList<String> earlBio = new LinkedList<>();
+                   earlBio.add(str1);
+                   earlBio.add(str2);
+                   earlBio.add(str3);
+                   earlBio.add(str4);
+            
+                   System.out.println(earlBio);
+            
+               }
+            }
+            Unlike ArrayList, LinkedList doesn't have an array or anything array-like inside. 
+            Overview of methods
+            LinkedList has a lot of methods in common with ArrayList.
+            
+            For example, both classes have methods such as add(), remove(), indexOf(), clear(), contains() (indicates whether an item is in the list), set() (replaces an
+            existing element), and size().
+            
+            Although many of them work differently internally (as we found with add() and remove()), the end result is the same.
+            
+            However, LinkedList does have separate methods for working with the beginning and end of the list, which ArrayList does not have:
+            addFirst(), addLast(): These methods for adding an element to the beginning/end of the list
+
+            public class Car {
+            
+               String model;
+            
+               public Car(String model) {
+                   this.model = model;
+               }
+            
+               public static void main(String[] args) {
+                   LinkedList<Car> cars = new LinkedList<>();
+                   Car ferrari = new Car("Ferrari 360 Spider");
+                   Car bugatti = new Car("Bugatti Veyron");
+                   Car lambo = new Car("Lamborghini Diablo");
+                   Car ford = new Car("Ford Mondeo");
+                   Car fiat = new Car("Fiat Ducato");
+            
+                   cars.add(ferrari);
+                   cars.add(bugatti);
+                   cars.add(lambo);
+                   System.out.println(cars);
+            
+                   cars.addFirst(ford);
+                   cars.addLast(fiat);
+                   System.out.println(cars);
+               }
+            
+               @Override
+               public String toString() {
+                   return "Car{" +
+                           "model='" + model + '\'' +
+                           '}';
+               }
+            }
+
+            Output:
+            
+            [Car{model='Ferrari 360 Spider'}, Car{model='Bugatti Veyron'}, Car{model='Lamborghini Diablo'}]
+            [Car{model='Ford Mondeo'}, Car{model='Ferrari 360 Spider'}, Car{model='Bugatti Veyron'}, Car{model='Lamborghini Diablo'}, Car{model='Fiat Ducato'}]
+
+            peekFirst(), peekLast(): The methods return the first/last element in the list. They return null if the list is empty
+            System.out.println(cars.peekFirst());
+            System.out.println(cars.peekLast());
+
+             pollFirst(), pollLast(): These methods return the first/last element in the list and remove it from the list. They return null if the list is empty
+              public static void main(String[] args) {
+                 LinkedList<Car> cars = new LinkedList<>();
+                 Car ferrari = new Car("Ferrari 360 Spider");
+                 Car bugatti = new Car("Bugatti Veyron");
+                 Car lambo = new Car("Lamborghini Diablo");
+              
+                 cars.add(ferrari);
+                 cars.add(bugatti);
+                 cars.add(lambo);
+                 System.out.println(cars.pollFirst());
+                 System.out.println(cars.pollLast());
+              
+                 System.out.println ("What's on the list?");
+                 System.out.println(cars);
+              }
+
+              Output:
+              
+              Car{model='Ferrari 360 Spider'}
+              Car{model='Lamborghini Diablo'}
+              What's left on the list?
+              [Car{model='Bugatti Veyron'}]
+
+              toArray(): This method returns an array containing the list items
+              public static void main(String[] args) {
+                 LinkedList<Car> cars = new LinkedList<>();
+                 Car ferrari = new Car("Ferrari 360 Spider");
+                 Car bugatti = new Car("Bugatti Veyron");
+                 Car lambo = new Car("Lamborghini Diablo");
+              
+                 cars.add(ferrari);
+                 cars.add(bugatti);
+                 cars.add(lambo);
+                 Car[] carsArray = cars.toArray(new Car[3]);
+                 System.out.println(Arrays.toString(carsArray));
+              }
+            how LinkedList works and how its organization differs from ArrayList. What are the benefits of using LinkedList?
+            Above all, we benefit when working in the middle of the list. Insertion and removal operations in the middle of a LinkedList are much simpler than in an 
+            ArrayList. We simply update the links of neighboring elements, and the unwanted element "drops out" of the chain of links.
+            
+            But in an ArrayList, we must check whether there is enough space (when inserting) if not, then we create a new array and copy the data there (when inserting)
+            we remove/insert the element, and move all the other elements to the right/left (depending on the type of operation). And the complexity of this process
+            depends heavily on the size of the list. It's one thing to copy/move 10 elements, and quite another to do the same with a million elements.
+            In other words, if insertion/removal operations in the middle of the list are most common in your program, LinkedList should be faster than ArrayList.
+
+            
     
             Set:
             Set es un conjunto, un grupo de objetos no numerados. La característica principal de un Set es que solo contiene objetos únicos , es decir, cada elemento
@@ -1498,15 +1845,152 @@ Ejercicios:
                     return list;
                 }
             }
-            
+
+            after removing an element, move the elements to the front of the array to put the "hole" at the end:
+
+              public static void main(String[] args) {
+                 Cat[] cats = new Cat[4];
+                 cats[0] = new Cat("Thomas");
+                 cats[1] = new Cat("Behemoth");
+                 cats[2] = new Cat("Lionel Messi");
+                 cats[2] = new Cat("Fluffy");
+                 cats[1] = null;
+                 for (int i = 2; i < cats.length-1; i++) {
+                     cats [i-1] = cats [i];// Move the elements to the front of the array, so the empty position is at the end
+                 }
+                 System.out.println(Arrays.toString(cats));
+              }
+
+              HashMap:
+              Map. It is also known as an "associative array", but this term is used infrequently. More commonly, it is called a "dictionary" or "map"
+              It is very easy to create:
+
+              public static void main(String[] args) {
+                 HashMap<Integer, String> passportsAndNames = new HashMap<>();
+              }
+              Adding a new pair to the HashMap looks like this:
+
+              public class Main {
+              
+                 public static void main(String[] args) {
+                     HashMap<Integer, String> passportsAndNames = new HashMap<>();
+              
+                     passportsAndNames.put (212133, "Bridget Logan");
+                     passportsAndNames.put (162348, "Ivan the Great");
+                     passportsAndNames.put(8082771, "Donald John Trump");
+                     System.out.println(passportsAndNames);
+                 }
+              }
+              
+              We use the method put() for this. In addition, HashMap overrides the toString() method, so it can be displayed on the console. The output will look like this:
+              Console output:
+              {212133=Bridget Logan, 8082771=Donald John Trump, 162348=Ivan the Great}
+              To get a value or remove a pair from the dictionary, we must pass to the get() and remove() the unique key that corresponds to the value. Unlike arrays and 
+              lists, a HashMap in Java has no numeric indices: values are accessed using the key.
+              
+              The ArrayList and LinkedList classes let us check whether the list contains any particular element.
+
+              Java HashMap lets us do this. What's more, we can do this for both members of the pair: This is what the containsKey() (checks for a key) and containsValue()
+              (checks for a value) methods are for.
+              
+              public static void main(String[] args) {
+                 HashMap<Integer, String> passportsAndNames = new HashMap<>();
+              
+                 passportsAndNames.put (212133, "Bridget Logan");
+                 passportsAndNames.put (162348, "Ivan the Great");
+                 passportsAndNames.put(8082771, "Donald John Trump");
+              
+                 System.out.println(passportsAndNames.containsKey(11111));
+                 System.out.println(passportsAndNames.containsValue("Donald John Trump"));
+              }
+              
+              Output:
+              false
+              true
+              Another convenient feature of HashMap in Java is the fact that you can get separate lists of all the keys and all the values.
+
+              This is accomplished with the keySet() and values() methods:
+              
+              public class Main {
+                 public static void main(String[] args) {
+                     HashMap<Integer, String> passportsAndNames = new HashMap<>();
+                     passportsAndNames.put (212133, "Bridget Logan");
+                     passportsAndNames.put (162348, "Ivan the Great");
+                     passportsAndNames.put(8082771, "Donald John Trump");
+                     Set keys = passportsAndNames.keySet();
+                     System.out.println("Keys: " + keys);
+                     ArrayList<String> values = new ArrayList<>(passportsAndNames.values());
+                     System.out.println("Values: " + values);
+                 }
+              }
+
+              The keys are extracted into a Set, which we haven't covered yet. It is special in that it cannot contain repeating elements. Now the main thing is to
+              remember that the list of all keys can be retrieved from a HashMap into a separate collection.
+              
+              In the example, we saved the values into an ordinary ArrayList.
+              
+              Console output:
+              
+              Keys: [212133, 8082771, 162348]
+              Values: [Bridget Logan, Donald John Trump, Ivan the Great]
+              The size() and clear() methods do exactly the same thing as in the previous structures we've discussed: the first returns the number of elements currently 
+              in the dictionary, the second removes all the elements.
+
+              public static void main(String[] args) {
+                 HashMap<Integer, String> passportsAndNames = new HashMap<>();
+              
+                 passportsAndNames.put (212133, "Bridget Logan");
+                 passportsAndNames.put (162348, "Ivan the Great");
+                 passportsAndNames.put(8082771, "Donald John Trump");
+              
+                 System.out.println(passportsAndNames.size());
+                 passportsAndNames.clear();
+                 System.out.println(passportsAndNames);
+              }
+              
+              Output:
+              
+              3
+              {}
+
+              To check if there is at least one element in our HashMap, we can use the isEmpty() method.
+              Another interesting point is that two Maps can be combined into one. This accomplished using the putAll() method. We call it on the first HashMap, pass the
+              second as an argument, and the elements from the second are added to the first:
+
+              public static void main(String[] args) {
+                 HashMap<Integer, String> passportsAndNames = new HashMap<>();
+                 HashMap<Integer, String> passportsAndNames2 = new HashMap<>();
+                 passportsAndNames.put (212133, "Bridget Logan");
+                 passportsAndNames.put (162348, "Ivan the Great");
+                 passportsAndNames.put(8082771, "Donald John Trump");
+                 passportsAndNames2.put(917352, "Clifford Patrick");
+                 passportsAndNames2.put(925648, "Mitchell Salgado");
+                 passportsAndNames.putAll(passportsAndNames2);
+                 System.out.println(passportsAndNames);
+              }
+
+              Output:
+              
+              {917352=Clifford Patrick, 212133=Bridget Logan, 8082771=Donald John Trump, 925648=Mitchell Salgado, 162348=Ivan the Great}
+              All the pairs in passportsAndNames2 have been copied to passportsAndNames.
+              iterating over a HashMap in a loop.
+
+              for (Map.Entry<Integer, String> entry: passportsAndNames.entrySet()) {
+                 System.out.println(entry);
+              }
+              
+              The Map.Entry class denotes the key-value pair inside the dictionary. The entrySet() method returns a list of all pairs in our HashMap. Because our map
+              consists of these Map.Entry pairs, we're iterating over pairs, not separate keys or values.
+              
+              Output:
+              
+              212133=Bridget Logan
+              8082771=Donald John Trump
+              162348=Ivan the Great
 
 
+              
 
-
-
-
-
-            
     
 
 ---------------------------------------------------------------------------------------------------------------------------------------
