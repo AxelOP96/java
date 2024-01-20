@@ -2135,6 +2135,80 @@ Reglas de visibilidad
       msTimeDifference. Luego dividimos msTimeDifferencepor la cantidad de milisegundos en 24 horas para obtener la cantidad de días completos desde el comienzo del 
       año actual hasta hoy
 
+      Ejercicios:
+
+            public static void main(String[] args) throws Exception
+      {
+          Date yearStartTime = new Date();
+          yearStartTime.setHours(0);
+          yearStartTime.setMinutes(0);
+          yearStartTime.setSeconds(0);
+          yearStartTime.setDate(1);
+          yearStartTime.setMonth(0);
+          Date currentTime = new Date();
+          long msTimeDistance = currentTime.getTime() - yearStartTime.getTime();
+          long msDay = 24 * 60 * 60 * 1000;
+              
+          int dayCount = (int) (msTimeDistance/msDay);
+          System.out.println("Days from start of year: " + dayCount);
+      }
+
+      Pila:
+      Imagínese una pila de papeles: directivas para un determinado empleado. Puede poner una nueva tarea en la parte superior de la pila o puede tomar una tarea de la
+      parte superior. Esto significa que las tareas no se ejecutarán en el orden en que se recibieron. . La tarea colocada en la pila más recientemente será la primera
+      en ejecutarse. Estructurar los elementos de una colección de esta manera forma una pila
+      Java tiene una colección especial para eso: Stack . Es una colección que tiene métodos para 'agregar un elemento' y 'tomar (obtener) un elemento'. Como habrás
+      adivinado, el último elemento que se agregó será el primero en ser tomado
+      Seguimiento de pila:
+      Imagínese que en un programa Java, el método A llamó al método B , que llamó al método C , que a su vez llamó al método D. Para salir del método B , primero 
+      debemos salir del método C , y para hacerlo, primero debemos salir del método D. Esto el comportamiento se parece a una pila. Para llegar a una tarea en medio 
+      de nuestra pila de papeles, por ejemplo, primero debe ejecutar todas las tareas que se encuentran encima". Una pila es un conjunto de elementos. Como hojas de 
+      papel en una pila. Para tomar la tercera hoja de papel desde arriba, primero debes tomar la segunda, y para eso, debes tomar la primera. siempre puedes poner y 
+      quitar pedazos de papel, pero siempre tienes que tomar el papel de arriba primero. Lo mismo es cierto para las llamadas a funciones. El método A llama al método B ,
+      que llama al método C. Para salir de A , primero debe salir de B , y para hacerlo, debe salir de C 
+
+      Obtenga y muestre la pila de llamadas actual:
+      public class ExceptionExample
+      {
+        public static void main(String[] args)
+        {
+          method1();
+        }
+      
+        public static void method1()
+        {
+          method2();
+        }
+      
+        public static void method2()
+        {
+          method3();
+        }
+      
+        public static void method3()
+        {
+           StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+          for (StackTraceElement element : stackTraceElements)
+          {
+             System.out.println(element.getMethodName());
+          }
+        }
+      }
+      Resultado:
+      getStackTrace
+      method3
+      method2
+      method1
+      main
+
+      ¿qué es este StackTraceElement?"
+      La máquina Java realiza un seguimiento de todas las llamadas a funciones. Para eso, tiene una colección especial: la pila. Cuando una función llama a otra, la
+      máquina Java coloca un nuevo objeto StackTraceElement en la pila. Cuando finaliza una función, ese elemento se elimina de la pila. Esto significa que la pila 
+      siempre almacena información actualizada sobre el estado actual de la "pila de llamadas a funciones. Cada objeto StackTraceElement contiene información sobre 
+      el método llamado. En particular, puede obtener el nombre del método utilizando el método getMethodName.Puedes ver cómo funciona esto en el ejemplo anterior:
+        1) Obtenemos la pila de llamadas.
+        2) Usamos un bucle for-each para recorrerlo. Espero que no hayas olvidado qué es eso.
+        3) Enviamos los nombres de los métodos a System.out 
       
   
 
